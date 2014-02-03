@@ -26,7 +26,10 @@ describe('vowelCount', function() {
 	it('should return 0 if the string is empty', function() {
 		expect(vowelCount('')).toBe(0);
 	})
-	it('should count all the vowels in a string', function() {
+	it('should return 0 if the string has no vowels in it', function() {
+		expect(vowelCount('bbzz34$')).toBe(0);
+	});
+	it('should return the total number of vowels in a string', function() {
 		expect(vowelCount('abcdefg')).toBe(2);
 	});
 });

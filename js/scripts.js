@@ -21,7 +21,30 @@ function letterChanges(str) {
 } 
 
 function vowelCount(str) {
-	if (str === "") {
+	var matchArray = str.match(/[aeiou]/gi);
+	if (matchArray === null) {
 		return 0;
-	} return str.match(/[aeiou]/gi).length;
+	} else return matchArray.length + " vowels total in " + '"' + vowelColor(str) + '"' ;
 }
+
+function vowelColor(str) {
+	var newStr = "",
+			len = str.length;
+	for (var i = 0; i < len; i++) {
+		if ((str.charAt(i)).match(/[aeiou]/gi)) {
+			newStr += "<span class=\"red\">" + str.charAt(i) + "</span>";
+		} else newStr += str.charAt(i);
+	} return newStr;
+}
+
+var genericForm = document.getElementById('genericForm');
+var result = document.getElementById('result');
+var textField = document.getElementById('textField');
+
+genericForm.onsubmit = function () {
+	var userInput = textField.value;
+	result.innerHTML = vowelCount(userInput);
+	genericForm.reset();
+	return false;
+}
+
