@@ -1,3 +1,4 @@
+// Generic Helper functions usable in any project
 function showElement (element) {
 	'use strict';
 	element.style.display = 'block';
@@ -8,9 +9,36 @@ function hideElement (element) {
 	element.style.display = 'none';
 }
 
+
+// Project specific functions 
+//
+// Takes an object and a target (in this case a button), and populates HTML with appropriate text and function
+// Change value passed to target to determine where in DOM the element is placed
+function populate(obj, target) {
+	'use strict';
+		description.innerHTML=obj.description;
+		functionTitle.innerHTML=obj.title;
+		textField.placeholder=obj.placeholder;
+		// container.insertBefore(functionContainer, target.nextSibling); // Comment this out if function should appear below buttons
+		showElement(functionContainer);
+	}
+
+
+
+// Object literal template
+//
+// var XXX = {
+// 	title: '',
+// 	description: '',
+// 	placeholder: '',
+// 	primaryFunction:,
+// 	helperFunction:
+// };
+
+// Coderbyte Objects
 var vowelCountObj = {
 	title: 'vowelCount',
-	description: 'This function counts the number of vowels in a sentence of word.',
+	description: 'This function counts the number of vowels in a sentence or word.',
 	placeholder: 'Enter some things here',
 	primaryFunction:
 		function vowelCount(str) {
@@ -35,9 +63,17 @@ var vowelCountObj = {
 	}
 };
 
+var add2Obj = {
+	title: 'add2',
+	description: 'A function that adds the numeral 2 to anything',
+	placeholder: 'Text please!',
+	primaryFunction: function add2(str) { 'use strict'; return str + 2; },
+	helperFunction: undefined
+};
 
 
 
+// Declared DOM variables
 var container = document.getElementById('container'),
 		functionContainer = document.getElementById('functionContainer'),
 		genericForm = document.getElementById('genericForm'),
@@ -46,33 +82,59 @@ var container = document.getElementById('container'),
 		description = document.getElementById('description'),
 		functionTitle = document.getElementById('functionTitle');
 
-var vowelCountBtn = document.getElementById('vowelCountBtn');
+var vowelCountBtn = document.getElementById('vowelCountBtn'),
+		add2Btn = document.getElementById('add2Btn');
 
-var visible = false;
+// Declared utility variables
+var	currentObject;
 
 
-vowelCountBtn.onclick = function () {
+// UI Button functionality
+vowelCountBtn.onclick = function() {
 	'use strict';
-	if (visible === false) {
-		description.innerHTML=vowelCountObj.description;
-		functionTitle.innerHTML=vowelCountObj.title;
-		textField.placeholder=vowelCountObj.placeholder;
-		container.insertBefore(functionContainer, vowelCountBtn.nextSibling);
-		showElement(functionContainer);
-		visible = true;
-	} else {
-		hideElement(functionContainer);
-		visible = false;
-	}
+	currentObject = vowelCountObj;
+	populate(vowelCountObj, vowelCountBtn);
 };
+
+add2Btn.onclick = function() {
+	'use strict';
+	currentObject = add2Obj;
+	populate(add2Obj, add2Btn);
+};
+
 
 genericForm.onsubmit = function () {
 	'use strict';
 	var userInput = textField.value;
-	result.innerHTML = vowelCountObj.primaryFunction(userInput);
+	result.innerHTML = currentObject.primaryFunction(userInput);
 	genericForm.reset();
 	return false;
 };
+
+
+
+
+
+
+
+
+
+// vowelCountBtn.onclick = function () {
+// 	'use strict';
+// 	if (visible === false) {
+// 		description.innerHTML=vowelCountObj.description;
+// 		functionTitle.innerHTML=vowelCountObj.title;
+// 		textField.placeholder=vowelCountObj.placeholder;
+// 		container.insertBefore(functionContainer, vowelCountBtn.nextSibling);
+// 		showElement(functionContainer);
+// 		visible = true;
+// 	} else {
+// 		hideElement(functionContainer);
+// 		visible = false;
+// 	}
+// };
+
+
 
 
 
