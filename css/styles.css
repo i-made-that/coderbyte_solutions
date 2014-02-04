@@ -1,5 +1,10 @@
+
 #container {
-	margin-left: 15px
+	margin-left: 15px;
+}
+
+.red {
+	color: red;
 }
 
 #textField {
@@ -7,7 +12,7 @@
 	margin-bottom: 15px;
 }
 
-.red {
-	color: red;
-}
+
+
+
 
