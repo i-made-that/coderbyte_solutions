@@ -16,7 +16,9 @@ var vowelCountObj = {
 		function vowelCount(str) {
 			'use strict';
 			var matchArray = str.match(/[aeiou]/gi);
-			if (matchArray === null) {
+			if (str === '') {
+				return '';
+			} else if (matchArray === null) {
 				return '0 vowels total';
 			} else return matchArray.length + ' vowels total in ' + '"' + this.helperFunction(str) + '"' ;
 		},
@@ -34,45 +36,20 @@ var vowelCountObj = {
 };
 
 
-function capitalizeVowels(str) {
-	'use strict';
-	var newStr = '',
-		len = str.length;
-	for (var i = 0; i < len; i++) {
-		if ((/[aeiou]/i).test(str.charAt(i))) {
-			newStr += str.charAt(i).toUpperCase();
-		} else newStr += str.charAt(i);
-	}
-	return newStr;
-}
-
-function letterChanges(str) {
-	'use strict';
-	var newStr = '',
-		len = str.length;
-	for (var i = 0; i < len; i++) {
-		if ((/z/i).test(str.charAt(i))) {
-			newStr += 'a';
-		} else if ((/[a-y]/i).test(str.charAt(i))) {
-			newStr += String.fromCharCode((str.charCodeAt(i) + 1));
-		} else newStr += str.charAt(i);
-	}
-	return capitalizeVowels(newStr);
-}
 
 
-var container = document.getElementById('container');
-var functionContainer = document.getElementById('functionContainer');
-
-var genericForm = document.getElementById('genericForm');
-var result = document.getElementById('result');
-var textField = document.getElementById('textField');
-var description = document.getElementById('description');
-var functionTitle = document.getElementById('functionTitle');
+var container = document.getElementById('container'),
+		functionContainer = document.getElementById('functionContainer'),
+		genericForm = document.getElementById('genericForm'),
+		result = document.getElementById('result'),
+		textField = document.getElementById('textField'),
+		description = document.getElementById('description'),
+		functionTitle = document.getElementById('functionTitle');
 
 var vowelCountBtn = document.getElementById('vowelCountBtn');
 
 var visible = false;
+
 
 vowelCountBtn.onclick = function () {
 	'use strict';
@@ -97,3 +74,32 @@ genericForm.onsubmit = function () {
 	return false;
 };
 
+
+
+// This is the letterChanges function and it's helper
+//
+// function capitalizeVowels(str) {
+// 	'use strict';
+// 	var newStr = '',
+// 		len = str.length;
+// 	for (var i = 0; i < len; i++) {
+// 		if ((/[aeiou]/i).test(str.charAt(i))) {
+// 			newStr += str.charAt(i).toUpperCase();
+// 		} else newStr += str.charAt(i);
+// 	}
+// 	return newStr;
+// }
+
+// function letterChanges(str) {
+// 	'use strict';
+// 	var newStr = '',
+// 		len = str.length;
+// 	for (var i = 0; i < len; i++) {
+// 		if ((/z/i).test(str.charAt(i))) {
+// 			newStr += 'a';
+// 		} else if ((/[a-y]/i).test(str.charAt(i))) {
+// 			newStr += String.fromCharCode((str.charCodeAt(i) + 1));
+// 		} else newStr += str.charAt(i);
+// 	}
+// 	return capitalizeVowels(newStr);
+// }

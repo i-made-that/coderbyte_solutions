@@ -24,18 +24,18 @@ describe('letterChanges', function() {
 
 describe('vowelColor', function() {
 	it('should return a string with all vowels enclosed in <span class="red"></span>', function() {
-		expect(vowelColor('abe')).toBe('<span class="red">a</span>b<span class="red">e</span>');
+		expect(vowelCountObj.helperFunction('abe')).toBe('<span class="red">a</span>b<span class="red">e</span>');
 	});
 });
 
 describe('vowelCount', function() {
 	it('should return 0 if the string is empty', function() {
-		expect(vowelCount('')).toBe(0);
+		expect(vowelCountObj.primaryFunction('')).toBe('');
 	})
 	it('should return 0 if the string has no vowels in it', function() {
-		expect(vowelCount('bbzz34$')).toBe(0);
+		expect(vowelCountObj.primaryFunction('bbzz34$')).toBe('0 vowels total');
 	});
 	it('should return the total number of vowels in a string', function() {
-		expect(vowelCount('abcdefg')).toBe('2 vowels total in "<span class="red">a</span>bcd<span class="red">e</span>fg"');
+		expect(vowelCountObj.primaryFunction('abcdefg')).toBe('2 vowels total in "<span class="red">a</span>bcd<span class="red">e</span>fg"');
 	});
 });
