@@ -3,6 +3,10 @@
 	margin-left: 15px;
 }
 
+#functionContainer {
+	display: none;
+}
+
 .red {
 	color: red;
 }
