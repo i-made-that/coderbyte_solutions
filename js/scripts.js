@@ -71,6 +71,14 @@ var add2Obj = {
 	helperFunction: undefined
 };
 
+var testObj = {
+	title: 'test',
+	description: 'testing 1, 2, 3',
+	placeholder: 'just a test',
+	primaryFunction: function testes(str) { 'use strict'; return 'test'; },
+	helperFunction: undefined
+};
+
 
 
 // Declared DOM variables
@@ -83,23 +91,57 @@ var container = document.getElementById('container'),
 		functionTitle = document.getElementById('functionTitle');
 
 var vowelCountBtn = document.getElementById('vowelCountBtn'),
-		add2Btn = document.getElementById('add2Btn');
+		add2Btn = document.getElementById('add2Btn'),
+		testBtn = document.getElementById('testBtn');
 
 // Declared utility variables
-var	currentObject;
+var	currentObject,
+		currentButton,
+		sameButton,
+		resultVisible = false,
+		formVisible = false;
 
 
 // UI Button functionality
 vowelCountBtn.onclick = function() {
 	'use strict';
-	currentObject = vowelCountObj;
-	populate(vowelCountObj, vowelCountBtn);
+	buttonControl(vowelCountObj, vowelCountBtn);
 };
+
+
+testBtn.onclick = function() {
+	'use strict';
+	buttonControl(testObj, testBtn);
+}
+
+function buttonControl(obj, btn) {
+	if (formVisible === false) {
+		populate(obj, btn);
+		showElement(functionContainer);
+		currentObject = obj;
+		formVisible = true;
+	} else if (currentObject === obj) {
+			result.innerHTML='';
+			hideElement(functionContainer);
+			formVisible = false;
+		} else if (currentObject !== obj && resultVisible === false) {
+			result.innerHTML='';
+			populate(obj,btn);
+			currentObject = obj;
+			formVisible = true;
+		} else {
+			result.innerHTML='';
+			populate(obj, btn);
+			currentObject = obj;
+			formVisible = true;
+		}
+	}
+
+
 
 add2Btn.onclick = function() {
 	'use strict';
-	currentObject = add2Obj;
-	populate(add2Obj, add2Btn);
+	buttonControl(add2Obj, add2Btn);
 };
 
 
@@ -108,6 +150,7 @@ genericForm.onsubmit = function () {
 	var userInput = textField.value;
 	result.innerHTML = currentObject.primaryFunction(userInput);
 	genericForm.reset();
+	resultVisible = true;
 	return false;
 };
 
