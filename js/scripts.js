@@ -1,27 +1,20 @@
-// Generic Helper functions usable in any project
-function showElement (element) {
-	'use strict';
-	element.style.display = 'block';
-}
+// Declared DOM variables
+var	functionContainer = document.getElementById('functionContainer'),
+		genericForm = document.getElementById('genericForm'),
+		result = document.getElementById('result'),
+		textField = document.getElementById('textField'),
+		description = document.getElementById('description'),
+		functionTitle = document.getElementById('functionTitle');
 
-function hideElement (element) {
-	'use strict';
-	element.style.display = 'none';
-}
+var vowelCountBtn = document.getElementById('vowelCountBtn'),
+		add2Btn = document.getElementById('add2Btn'),
+		testBtn = document.getElementById('testBtn');
 
-
-// Project specific functions 
-//
-// Takes an object and a target (in this case a button), and populates HTML with appropriate text and function
-// Change value passed to target to determine where in DOM the element is placed
-function populate(obj, target) {
-	'use strict';
-		description.innerHTML=obj.description;
-		functionTitle.innerHTML=obj.title;
-		textField.placeholder=obj.placeholder;
-		// container.insertBefore(functionContainer, target.nextSibling); // Comment this out if function should appear below buttons
-		showElement(functionContainer);
-	}
+// Declared utility variables
+var	currentObject,
+		currentButton,
+		resultVisible = false,
+		formVisible = false;
 
 
 
@@ -75,69 +68,81 @@ var testObj = {
 	title: 'test',
 	description: 'testing 1, 2, 3',
 	placeholder: 'just a test',
-	primaryFunction: function testes(str) { 'use strict'; return 'test'; },
+	primaryFunction: function testes() { 'use strict'; return 'test'; },
 	helperFunction: undefined
 };
 
 
 
-// Declared DOM variables
-var container = document.getElementById('container'),
-		functionContainer = document.getElementById('functionContainer'),
-		genericForm = document.getElementById('genericForm'),
-		result = document.getElementById('result'),
-		textField = document.getElementById('textField'),
-		description = document.getElementById('description'),
-		functionTitle = document.getElementById('functionTitle');
-
-var vowelCountBtn = document.getElementById('vowelCountBtn'),
-		add2Btn = document.getElementById('add2Btn'),
-		testBtn = document.getElementById('testBtn');
-
-// Declared utility variables
-var	currentObject,
-		currentButton,
-		sameButton,
-		resultVisible = false,
-		formVisible = false;
-
-
-// UI Button functionality
-vowelCountBtn.onclick = function() {
+// Generic Helper functions usable in any project
+function showElement (element) {
 	'use strict';
-	buttonControl(vowelCountObj, vowelCountBtn);
-};
-
-
-testBtn.onclick = function() {
-	'use strict';
-	buttonControl(testObj, testBtn);
+	element.style.display = 'block';
 }
 
-function buttonControl(obj, btn) {
-	if (formVisible === false) {
-		populate(obj, btn);
+function hideElement (element) {
+	'use strict';
+	element.style.display = 'none';
+}
+
+// Project specific functions 
+//
+// Takes an object and a target (in this case a button), and populates HTML with appropriate text and function
+// Change value passed to target to determine where in DOM the element is placed
+function populateWith(obj) {
+	'use strict';
+		description.innerHTML=obj.description;
+		functionTitle.innerHTML=obj.title;
+		textField.placeholder=obj.placeholder;
 		showElement(functionContainer);
-		currentObject = obj;
+	}
+
+
+function buttonControl(thisObj, thisBtn) {
+	'use strict';
+	if (formVisible === false) {
+		thisBtn.className='btn btn-primary';
+		populateWith(thisObj);
+		showElement(functionContainer);
+		currentObject = thisObj;
+		currentButton = thisBtn;
 		formVisible = true;
-	} else if (currentObject === obj) {
+	} else if (currentObject === thisObj) {
+			thisBtn.className='btn';
+			currentButton = '';
 			result.innerHTML='';
 			hideElement(functionContainer);
 			formVisible = false;
-		} else if (currentObject !== obj && resultVisible === false) {
+	} else if (currentObject !== thisObj && resultVisible === false) {
+			currentButton.className='btn';
+			thisBtn.className='btn btn-primary';
 			result.innerHTML='';
-			populate(obj,btn);
-			currentObject = obj;
+			populateWith(thisObj);
+			currentObject = thisObj;
+			currentButton = thisBtn;
 			formVisible = true;
-		} else {
+	} else {
+			currentButton.className='btn';
+			thisBtn.className='btn btn-primary';
 			result.innerHTML='';
-			populate(obj, btn);
-			currentObject = obj;
+			populateWith(thisObj);
+			currentObject = thisObj;
+			currentButton = thisBtn;
 			formVisible = true;
 		}
 	}
 
 
+// Buttons & Interactions 
+vowelCountBtn.onclick = function() {
+	'use strict';
+	buttonControl(vowelCountObj, vowelCountBtn);
+};
+
+testBtn.onclick = function() {
+	'use strict';
+	buttonControl(testObj, testBtn);
+};
 
 add2Btn.onclick = function() {
 	'use strict';
