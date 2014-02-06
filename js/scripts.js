@@ -8,15 +8,13 @@ var	functionContainer = document.getElementById('functionContainer'),
 
 var vowelCountBtn = document.getElementById('vowelCountBtn'),
 		add2Btn = document.getElementById('add2Btn'),
-		testBtn = document.getElementById('testBtn');
+		letterChangesBtn = document.getElementById('letterChangesBtn');
 
 // Declared utility variables
 var	currentObject,
 		currentButton,
 		resultVisible = false,
 		formVisible = false;
-
-
 
 // Object literal template
 //
@@ -56,6 +54,38 @@ var vowelCountObj = {
 	}
 };
 
+var letterChangesObj = {
+	title: 'letterChanges',
+	description: 'A function that takes a string, and replaces every letter in the string with the letter that follows in the alphabet.  Then, it capitalizes all vowels.',
+	placeholder: 'Enter some words',
+	primaryFunction:
+		function letterChanges(str) {
+		'use strict';
+		var newStr = '',
+			len = str.length;
+		for (var i = 0; i < len; i++) {
+			if ((/z/i).test(str.charAt(i))) {
+				newStr += 'a';
+			} else if ((/[a-y]/i).test(str.charAt(i))) {
+				newStr += String.fromCharCode((str.charCodeAt(i) + 1));
+			} else newStr += str.charAt(i);
+		}
+		return letterChangesObj.helperFunction(newStr);
+	},
+	helperFunction:
+		function capitalizeVowels(str) {
+		'use strict';
+		var newStr = '',
+				len = str.length;
+		for (var i = 0; i < len; i++) {
+			if ((/[aeiou]/i).test(str.charAt(i))) {
+				newStr += str.charAt(i).toUpperCase();
+			} else newStr += str.charAt(i);
+		}
+		return newStr;
+	}
+};
+
 var add2Obj = {
 	title: 'add2',
 	description: 'A function that adds the numeral 2 to anything',
@@ -64,13 +94,10 @@ var add2Obj = {
 	helperFunction: undefined
 };
 
-var testObj = {
-	title: 'test',
-	description: 'testing 1, 2, 3',
-	placeholder: 'just a test',
-	primaryFunction: function testes() { 'use strict'; return 'test'; },
-	helperFunction: undefined
-};
+
+
+
+
 
 
 
@@ -139,9 +166,9 @@ vowelCountBtn.onclick = function() {
 	buttonControl(vowelCountObj, vowelCountBtn);
 };
 
-testBtn.onclick = function() {
+letterChangesBtn.onclick = function() {
 	'use strict';
-	buttonControl(testObj, testBtn);
+	buttonControl(letterChangesObj, letterChangesBtn);
 };
 
 add2Btn.onclick = function() {
@@ -167,49 +194,13 @@ genericForm.onsubmit = function () {
 
 
 
-// vowelCountBtn.onclick = function () {
-// 	'use strict';
-// 	if (visible === false) {
-// 		description.innerHTML=vowelCountObj.description;
-// 		functionTitle.innerHTML=vowelCountObj.title;
-// 		textField.placeholder=vowelCountObj.placeholder;
-// 		container.insertBefore(functionContainer, vowelCountBtn.nextSibling);
-// 		showElement(functionContainer);
-// 		visible = true;
-// 	} else {
-// 		hideElement(functionContainer);
-// 		visible = false;
-// 	}
-// };
 
 
 
 
 
-// This is the letterChanges function and it's helper
-//
-// function capitalizeVowels(str) {
-// 	'use strict';
-// 	var newStr = '',
-// 		len = str.length;
-// 	for (var i = 0; i < len; i++) {
-// 		if ((/[aeiou]/i).test(str.charAt(i))) {
-// 			newStr += str.charAt(i).toUpperCase();
-// 		} else newStr += str.charAt(i);
-// 	}
-// 	return newStr;
-// }
 
-// function letterChanges(str) {
-// 	'use strict';
-// 	var newStr = '',
-// 		len = str.length;
-// 	for (var i = 0; i < len; i++) {
-// 		if ((/z/i).test(str.charAt(i))) {
-// 			newStr += 'a';
-// 		} else if ((/[a-y]/i).test(str.charAt(i))) {
-// 			newStr += String.fromCharCode((str.charCodeAt(i) + 1));
-// 		} else newStr += str.charAt(i);
-// 	}
-// 	return capitalizeVowels(newStr);
-// }
+
+
+
+
