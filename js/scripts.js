@@ -1,17 +1,7 @@
 // Declared DOM variables
 var	functionContainer = document.getElementById('functionContainer'),
 		genericForm = document.getElementById('genericForm'),
-<<<<<<< HEAD
-		result = document.getElementById('result'),
-		textField = document.getElementById('textField'),
-		// description = document.getElementById('description'),
-		functionTitle = document.getElementById('functionTitle');
-=======
 		result = document.getElementById('result');
-		
->>>>>>> working
-
-
 
 // Object literal template
 //
