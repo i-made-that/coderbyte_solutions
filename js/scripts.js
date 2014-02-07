@@ -148,7 +148,6 @@ document.getElementById('container').addEventListener('click', function(e) {
 		var userInput = textField.value;
 		result.innerHTML = arrayOfObjects[j].primaryFunction(userInput);
 		genericForm.reset();
-		resultVisible = true;
 		e.preventDefault();
 	}
 }, false);
