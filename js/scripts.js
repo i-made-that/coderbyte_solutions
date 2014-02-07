@@ -104,12 +104,35 @@ function hideElement (element) {
 }
 
 
+var State = {
+	isResultDisplayed: function(element) {
+		'use strict';
+		if (element.innerHTML !== '') {
+			return true;
+		} return false;
+	},
+	isFormVisible: function(element) {
+		'use strict';
+		if (element.style.display === '') {
+			return false;
+		} return true;
+	},
+	isSameButton: function(element, arr, i) {
+		'use strict';
+		if (element === arr[i].title) {}
+	}
+};
+
+
+
 var j,
 		functionTitle = document.getElementById('functionTitle');
 
 document.getElementById('container').addEventListener('click', function(e) {
+	'use strict';
 	var currentButton = (e.srcElement.id),
-			textField = document.getElementById('textField');
+			textField = document.getElementById('textField'),
+			currentState = Object.create(State);
 	if (currentButton !== 'submitButton') {
 	for (var i = 0; i < arrayOfObjects.length; i++) {
 		if (currentButton === arrayOfObjects[i].title) {
@@ -119,7 +142,7 @@ document.getElementById('container').addEventListener('click', function(e) {
 			textField.placeholder=arrayOfObjects[i].placeholder;
 			showElement(functionContainer);
 		}
-		} 
+		}
 	} else {
 		var userInput = textField.value;
 		result.innerHTML = arrayOfObjects[j].primaryFunction(userInput);
