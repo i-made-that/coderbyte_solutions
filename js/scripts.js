@@ -8,10 +8,6 @@ var	functionContainer = document.getElementById('functionContainer'),
 		description = document.getElementById('description'),
 		functionTitle = document.getElementById('functionTitle');
 
-var vowelCountBtn = document.getElementById('vowelCount'),
-		add2Btn = document.getElementById('add2'),
-		letterChangesBtn = document.getElementById('letterChanges');
-
 // Declared utility variables
 var	currentObject,
 		currentButton,
@@ -127,39 +123,7 @@ function populateWith(obj) {
 	}
 
 
-function buttonControl(thisObj, thisBtn) {
-	'use strict';
-	if (formVisible === false) {
-		thisBtn.className='btn btn-primary';
-		populateWith(thisObj);
-		showElement(functionContainer);
-		currentObject = thisObj;
-		currentButton = thisBtn;
-		formVisible = true;
-	} else if (currentObject === thisObj) {
-			thisBtn.className='btn';
-			currentButton = '';
-			result.innerHTML='';
-			hideElement(functionContainer);
-			formVisible = false;
-	} else if (currentObject !== thisObj && resultVisible === false) {
-			currentButton.className='btn';
-			thisBtn.className='btn btn-primary';
-			result.innerHTML='';
-			populateWith(thisObj);
-			currentObject = thisObj;
-			currentButton = thisBtn;
-			formVisible = true;
-	} else {
-			currentButton.className='btn';
-			thisBtn.className='btn btn-primary';
-			result.innerHTML='';
-			populateWith(thisObj);
-			currentObject = thisObj;
-			currentButton = thisBtn;
-			formVisible = true;
-		}
-	}
+
 
 document.getElementById('container').addEventListener('click', function(e) {
 	var x = e.srcElement.id + "Obj";
@@ -167,21 +131,7 @@ document.getElementById('container').addEventListener('click', function(e) {
 	buttonControl(x, y); 
 }, false);
 
-// Buttons & Interactions 
-// vowelCountBtn.onclick = function() {
-// 	'use strict';
-// 	buttonControl(vowelCountObj, vowelCountBtn);
-// };
 
-// letterChangesBtn.onclick = function() {
-// 	'use strict';
-// 	buttonControl(letterChangesObj, letterChangesBtn);
-// };
-
-// add2Btn.onclick = function() {
-// 	'use strict';
-// 	buttonControl(add2Obj, add2Btn);
-// };
 
 genericForm.onsubmit = function () {
 	'use strict';
