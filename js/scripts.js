@@ -1,20 +1,10 @@
-function cl(shit) {
-	console.log(shit);
-} 
-
 // Declared DOM variables
 var	functionContainer = document.getElementById('functionContainer'),
 		genericForm = document.getElementById('genericForm'),
-		result = document.getElementById('result'),
-		textField = document.getElementById('textField'),
-		description = document.getElementById('description'),
-		functionTitle = document.getElementById('functionTitle');
+		result = document.getElementById('result');
+		
 
-// Declared utility variables
-// var	currentObject,
-// 		currentButton,
-// 		resultVisible = false,
-// 		formVisible = false;
+
 
 // Object literal template
 //
@@ -114,9 +104,12 @@ function hideElement (element) {
 }
 
 
-var j;
+var j,
+		functionTitle = document.getElementById('functionTitle');
+
 document.getElementById('container').addEventListener('click', function(e) {
-	var currentButton = (e.srcElement.id);
+	var currentButton = (e.srcElement.id),
+			textField = document.getElementById('textField');
 	if (currentButton !== 'submitButton') {
 	for (var i = 0; i < arrayOfObjects.length; i++) {
 		if (currentButton === arrayOfObjects[i].title) {
@@ -135,7 +128,6 @@ document.getElementById('container').addEventListener('click', function(e) {
 		e.preventDefault();
 	}
 }, false);
-
 
 
 
