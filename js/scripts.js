@@ -126,6 +126,7 @@ var State = {
 
 
 var j,
+		descrip = document.getElementById('description'),
 		functionTitle = document.getElementById('functionTitle');
 
 document.getElementById('container').addEventListener('click', function(e) {
@@ -137,7 +138,7 @@ document.getElementById('container').addEventListener('click', function(e) {
 	for (var i = 0; i < arrayOfObjects.length; i++) {
 		if (currentButton === arrayOfObjects[i].title) {
 			j = i;
-			description.innerHTML=arrayOfObjects[i].description;
+			descrip.innerHTML=arrayOfObjects[i].description;
 			functionTitle.innerHTML=arrayOfObjects[i].title;
 			textField.placeholder=arrayOfObjects[i].placeholder;
 			showElement(functionContainer);
