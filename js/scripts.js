@@ -1,22 +1,17 @@
-
-
 // Declared DOM variables
 var	functionContainer = document.getElementById('functionContainer'),
 		genericForm = document.getElementById('genericForm'),
+<<<<<<< HEAD
 		result = document.getElementById('result'),
 		textField = document.getElementById('textField'),
 		// description = document.getElementById('description'),
 		functionTitle = document.getElementById('functionTitle');
+=======
+		result = document.getElementById('result');
+		
+>>>>>>> working
 
-var vowelCountBtn = document.getElementById('vowelCount'),
-		add2Btn = document.getElementById('add2'),
-		letterChangesBtn = document.getElementById('letterChanges');
 
-// Declared utility variables
-var	currentObject,
-		currentButton,
-		resultVisible = false,
-		formVisible = false;
 
 // Object literal template
 //
@@ -29,7 +24,8 @@ var	currentObject,
 // };
 
 // Coderbyte Objects
-var vowelCountObj = {
+var arrayOfObjects = [
+{
 	title: 'vowelCount',
 	description: 'This function counts the number of vowels in a sentence or word.',
 	placeholder: 'Enter some things here',
@@ -54,9 +50,9 @@ var vowelCountObj = {
 			} else newStr += str.charAt(i);
 		} return newStr;
 	}
-};
+},
 
-var letterChangesObj = {
+{
 	title: 'letterChanges',
 	description: 'A function that takes a string, and replaces every letter in the string with the letter that follows in the alphabet.  Then, it capitalizes all vowels.',
 	placeholder: 'Enter some words',
@@ -72,7 +68,7 @@ var letterChangesObj = {
 				newStr += String.fromCharCode((str.charCodeAt(i) + 1));
 			} else newStr += str.charAt(i);
 		}
-		return letterChangesObj.helperFunction(newStr);
+		return this.helperFunction(newStr);
 	},
 	helperFunction:
 		function capitalizeVowels(str) {
@@ -86,16 +82,16 @@ var letterChangesObj = {
 		}
 		return newStr;
 	}
-};
+},
 
-var add2Obj = {
+{
 	title: 'add2',
 	description: 'A function that adds the numeral 2 to anything',
 	placeholder: 'Text please!',
 	primaryFunction: function add2(str) { 'use strict'; return str + 2; },
 	helperFunction: undefined
-};
-
+}
+];
 
 
 
@@ -114,86 +110,55 @@ function hideElement (element) {
 	element.style.display = 'none';
 }
 
-// Project specific functions 
-//
-// Takes an object and a target (in this case a button), and populates HTML with appropriate text and function
-// Change value passed to target to determine where in DOM the element is placed
-function populateWith(obj) {
-	'use strict';
-		description.innerHTML=obj.description;
-		functionTitle.innerHTML=obj.title;
-		textField.placeholder=obj.placeholder;
-		showElement(functionContainer);
+
+var State = {
+	isResultDisplayed: function(element) {
+		'use strict';
+		if (element.innerHTML !== '') {
+			return true;
+		} return false;
+	},
+	isFormVisible: function(element) {
+		'use strict';
+		if (element.style.display === '') {
+			return false;
+		} return true;
+	},
+	isSameButton: function(element, arr, i) {
+		'use strict';
+		if (element === arr[i].title) {}
 	}
-
-
-function buttonControl(thisObj, thisBtn) {
-	'use strict';
-	if (formVisible === false) {
-		thisBtn.className='btn btn-primary';
-		populateWith(thisObj);
-		showElement(functionContainer);
-		currentObject = thisObj;
-		currentButton = thisBtn;
-		formVisible = true;
-	} else if (currentObject === thisObj) {
-			thisBtn.className='btn';
-			currentButton = '';
-			result.innerHTML='';
-			hideElement(functionContainer);
-			formVisible = false;
-	} else if (currentObject !== thisObj && resultVisible === false) {
-			currentButton.className='btn';
-			thisBtn.className='btn btn-primary';
-			result.innerHTML='';
-			populateWith(thisObj);
-			currentObject = thisObj;
-			currentButton = thisBtn;
-			formVisible = true;
-	} else {
-			currentButton.className='btn';
-			thisBtn.className='btn btn-primary';
-			result.innerHTML='';
-			populateWith(thisObj);
-			currentObject = thisObj;
-			currentButton = thisBtn;
-			formVisible = true;
-		}
-	}
-
-document.getElementById('container').addEventListener('click', function(e) {
-	var x = e.srcElement.id + "Obj";
-	var y = e.srcElement.id + "Btn";
-	buttonControl(x, y); 
-}, false);
-
-// Buttons & Interactions 
-// vowelCountBtn.onclick = function() {
-// 	'use strict';
-// 	buttonControl(vowelCountObj, vowelCountBtn);
-// };
-
-// letterChangesBtn.onclick = function() {
-// 	'use strict';
-// 	buttonControl(letterChangesObj, letterChangesBtn);
-// };
-
-// add2Btn.onclick = function() {
-// 	'use strict';
-// 	buttonControl(add2Obj, add2Btn);
-// };
-
-genericForm.onsubmit = function () {
-	'use strict';
-	var userInput = textField.value;
-	result.innerHTML = currentObject.primaryFunction(userInput);
-	genericForm.reset();
-	resultVisible = true;
-	return false;
 };
 
 
 
+var j,
+		descrip = document.getElementById('description'),
+		functionTitle = document.getElementById('functionTitle');
+
+document.getElementById('container').addEventListener('click', function(e) {
+	'use strict';
+	var currentButton = (e.srcElement.id),
+			textField = document.getElementById('textField'),
+			currentState = Object.create(State);
+	if (currentButton !== 'submitButton') {
+	for (var i = 0; i < arrayOfObjects.length; i++) {
+		if (currentButton === arrayOfObjects[i].title) {
+			j = i;
+			descrip.innerHTML=arrayOfObjects[i].description;
+			functionTitle.innerHTML=arrayOfObjects[i].title;
+			textField.placeholder=arrayOfObjects[i].placeholder;
+			showElement(functionContainer);
+		}
+		}
+	} else {
+		var userInput = textField.value;
+		result.innerHTML = arrayOfObjects[j].primaryFunction(userInput);
+		genericForm.reset();
+		resultVisible = true;
+		e.preventDefault();
+	}
+}, false);
 
 
 
