@@ -1,0 +1,780 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"c",
+				"className"
+			],
+			[
+				"current",
+				"currentButton"
+			],
+			[
+				"vowel",
+				"vowelCountObj"
+			],
+			[
+				"result",
+				"resultVisible"
+			],
+			[
+				"te",
+				"testBtn"
+			],
+			[
+				"test",
+				"testObj"
+			],
+			[
+				"butt",
+				"buttonControl"
+			],
+			[
+				"fun",
+				"functionVisible"
+			],
+			[
+				"func",
+				"functionVisible"
+			],
+			[
+				"sho",
+				"showElement"
+			],
+			[
+				"add2",
+				"add2Obj"
+			],
+			[
+				"vo",
+				"vowelCountObj"
+			],
+			[
+				"ad",
+				"add2Btn"
+			],
+			[
+				"hel",
+				"helperFunction"
+			],
+			[
+				"a",
+				"afterThisElement"
+			],
+			[
+				"eleme",
+				"elementToBeInserted"
+			],
+			[
+				"insert",
+				"insertBefore"
+			],
+			[
+				"function",
+				"functionContainer"
+			],
+			[
+				"in",
+				"inputPlaceholder"
+			],
+			[
+				"v",
+				"vowelCountObj"
+			],
+			[
+				"vow",
+				"vowelCountBtn"
+			],
+			[
+				"pr",
+				"primaryFunction"
+			],
+			[
+				"margin",
+				"margin-left"
+			],
+			[
+				"capi",
+				"capitalizeVowels"
+			],
+			[
+				"i",
+				"i"
+			],
+			[
+				"sc",
+				"script"
+			],
+			[
+				"isLea",
+				"isLeapYear"
+			],
+			[
+				"is",
+				"isLeapYear"
+			],
+			[
+				"past",
+				"pastPresentFuture"
+			],
+			[
+				"print",
+				"printLeapYear"
+			],
+			[
+				"reset",
+				"resetButton"
+			],
+			[
+				"le",
+				"leapForm"
+			],
+			[
+				"element",
+				"element"
+			],
+			[
+				"get",
+				"getElementById"
+			],
+			[
+				"english",
+				"englishWord"
+			],
+			[
+				"tran",
+				"translatedWord"
+			],
+			[
+				"englis",
+				"englishWord"
+			],
+			[
+				"en",
+				"englishWord"
+			],
+			[
+				"engli",
+				"englishToPigLatin"
+			],
+			[
+				"padd",
+				"padding"
+			],
+			[
+				"margi",
+				"margin-bottom"
+			],
+			[
+				"toE",
+				"toEqual"
+			],
+			[
+				"getf",
+				"getFirstName"
+			],
+			[
+				"height",
+				"heightInFeet"
+			],
+			[
+				"num",
+				"numArray"
+			],
+			[
+				"sub",
+				"sub"
+			],
+			[
+				"return",
+				"return"
+			],
+			[
+				"bunny",
+				"bunnyEars2"
+			],
+			[
+				"str",
+				"strCount"
+			],
+			[
+				"end",
+				"endParen"
+			],
+			[
+				"string",
+				"stringClean"
+			],
+			[
+				"strin",
+				"stringClean"
+			],
+			[
+				"question",
+				"questionText"
+			],
+			[
+				"quest",
+				"questionText"
+			],
+			[
+				"but",
+				"buttonText"
+			],
+			[
+				"radio",
+				"radioButtonCheck"
+			],
+			[
+				"cou",
+				"countAbcGregor"
+			],
+			[
+				"coun",
+				"countAbc2"
+			],
+			[
+				"count",
+				"countAbc2"
+			],
+			[
+				"case",
+				"caseCombos"
+			],
+			[
+				"to",
+				"toUpperCase"
+			],
+			[
+				"su",
+				"substring"
+			],
+			[
+				"form",
+				"formContents"
+			],
+			[
+				"pair",
+				"pairStar"
+			],
+			[
+				"array",
+				"array220"
+			],
+			[
+				"al",
+				"allQuestions"
+			],
+			[
+				"remov",
+				"removeRadioButtons"
+			],
+			[
+				"check",
+				"checkRadioButton"
+			],
+			[
+				"crea",
+				"createRadioButtonFromArray"
+			],
+			[
+				"choice",
+				"choiceForm"
+			],
+			[
+				"corre",
+				"correctAnswer"
+			],
+			[
+				"font",
+				"font-size"
+			],
+			[
+				"ar",
+				"array"
+			],
+			[
+				"arr",
+				"arrayIntSum"
+			],
+			[
+				"sum",
+				"sum"
+			],
+			[
+				"border",
+				"border-style"
+			],
+			[
+				"bun",
+				"bunnyEars"
+			],
+			[
+				"nu",
+				"numStrLength"
+			],
+			[
+				"re",
+				"recurseNumDown"
+			],
+			[
+				"text",
+				"textSize"
+			],
+			[
+				"mar",
+				"margin"
+			],
+			[
+				"D",
+				"DC"
+			],
+			[
+				"rev",
+				"revStr"
+			],
+			[
+				"e",
+				"e"
+			],
+			[
+				"new",
+				"newString"
+			],
+			[
+				"find",
+				"findNextLetter"
+			],
+			[
+				"letter",
+				"letterIndex"
+			],
+			[
+				"background",
+				"background-position"
+			],
+			[
+				"marg",
+				"margin-top"
+			],
+			[
+				"fn",
+				"font-family"
+			],
+			[
+				"padding",
+				"padding-bottom"
+			],
+			[
+				"block",
+				"inline-block"
+			],
+			[
+				"min",
+				"min-width"
+			],
+			[
+				"fon",
+				"font-size"
+			],
+			[
+				"top",
+				"margin-top"
+			],
+			[
+				"back",
+				"background-color"
+			],
+			[
+				"background-",
+				"background-color"
+			],
+			[
+				"h",
+				"href	Attr"
+			],
+			[
+				"pA",
+				"padding-left"
+			],
+			[
+				"bo",
+				"border-box"
+			],
+			[
+				"pa",
+				"padding-bottom"
+			],
+			[
+				"table-c",
+				"table-cell"
+			],
+			[
+				"border-b",
+				"border-bottom-width"
+			],
+			[
+				"backgrou",
+				"background-position"
+			],
+			[
+				"paddi",
+				"padding"
+			],
+			[
+				"co",
+				"color"
+			],
+			[
+				"m",
+				"margin"
+			],
+			[
+				"font-s",
+				"font-size"
+			],
+			[
+				"text-",
+				"text-align"
+			],
+			[
+				"backgroun",
+				"background-color"
+			],
+			[
+				"inline",
+				"inline-block"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 47.0,
+		"selected_items":
+		[
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"ins",
+				"Package Control: Install Package"
+			],
+			[
+				"instal",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 449.0
+	},
+	"console":
+	{
+		"height": 474.0,
+		"history":
+		[
+			"2+2",
+			"import urllib.request,os,hashlib; h = '7183a2d3e96f11eeadd761d777e62404e330c659d4bb41d3bdf022e94cab3cd0'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://sublime.wbond.net/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by) ",
+			"import urllib2,os,hashlib; h = '7183a2d3e96f11eeadd761d777e62404e330c659d4bb41d3bdf022e94cab3cd0'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); os.makedirs( ipp ) if not os.path.exists(ipp) else None; urllib2.install_opener( urllib2.build_opener( urllib2.ProxyHandler()) ); by = urllib2.urlopen( 'http://sublime.wbond.net/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); open( os.path.join( ipp, pf), 'wb' ).write(by) if dh == h else None; print('Error validating download (got %s instead of %s), please try manual install' % (dh, h) if dh != h else 'Please restart Sublime Text to finish installation') ",
+			"clear()",
+			"import urllib2,os,hashlib; h = '7183a2d3e96f11eeadd761d777e62404e330c659d4bb41d3bdf022e94cab3cd0'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); os.makedirs( ipp ) if not os.path.exists(ipp) else None; urllib2.install_opener( urllib2.build_opener( urllib2.ProxyHandler()) ); by = urllib2.urlopen( 'http://sublime.wbond.net/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); open( os.path.join( ipp, pf), 'wb' ).write(by) if dh == h else None; print('Error validating download (got %s instead of %s), please try manual install' % (dh, h) if dh != h else 'Please restart Sublime Text to finish installation') ",
+			"var x = 15",
+			"clear",
+			"2+2",
+			"clear()",
+			"clear"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/Users/rogerthomasson/GoogleDrive/code_projects/Coderbyte/coderbyte_solutions/index.html",
+		"/Users/rogerthomasson/GoogleDrive/code_projects/Coderbyte/coderbyte_solutions/css/styles.css",
+		"/Users/rogerthomasson/GoogleDrive/code_projects/Coderbyte/coderbyte_solutions/jasmine/spec/scriptSpec.js",
+		"/Users/rogerthomasson/GoogleDrive/code_projects/Coderbyte/coderbyte_solutions/js/scripts.js",
+		"/Users/rogerthomasson/GoogleDrive/code_projects/Random_Projects/dynamic_quiz/dynamic_quiz_jirka.html",
+		"/Users/rogerthomasson/GoogleDrive/code_projects/Coderbyte/coderbyte_solutions/js/coderbyte_solutions.sublime-project",
+		"/Users/rogerthomasson/GoogleDrive/code_projects/Coderbyte/coderbyte_solutions/coderbyte_solutions.sublime-project",
+		"/Users/rogerthomasson/GoogleDrive/code_projects/Coderbyte/coderbyte_solutions/coderbyte_solutions.sublime-workspace",
+		"/Users/rogerthomasson/GoogleDrive/code_projects/Random_Projects/leap-year/js/scripts.js",
+		"/Users/rogerthomasson/GoogleDrive/code_projects/scratch.html",
+		"/Users/rogerthomasson/Library/Application Support/Sublime Text 3/Packages/User/Preferences.sublime-settings",
+		"/Users/rogerthomasson/Library/Application Support/Sublime Text 3/Packages/Default/Preferences.sublime-settings",
+		"/Users/rogerthomasson/GoogleDrive/code_projects/Random_Projects/leap-year/leap-year.html",
+		"/Users/rogerthomasson/GoogleDrive/code_projects/Coderbyte/Coderbyte_Solutions/jasmine/SpecRunner.html",
+		"/Users/rogerthomasson/GoogleDrive/code_projects/Coderbyte/Coderbyte_Solutions/js/scripts.js",
+		"/Users/rogerthomasson/GoogleDrive/code_projects/Coderbyte/Coderbyte_Solutions/jasmine/spec/scriptSpec.js",
+		"/Users/rogerthomasson/GoogleDrive/code_projects/Templates/Bootstrap Basic/jasmine/SpecRunner.html",
+		"/Users/rogerthomasson/GoogleDrive/code_projects/Templates/Bootstrap Basic/index.html",
+		"/Users/rogerthomasson/GoogleDrive/code_projects/Templates/Bootstrap Basic/js/scripts.js",
+		"/Users/rogerthomasson/GoogleDrive/code_projects/Templates/Bootstrap Basic/jasmine/spec/scriptSpec.js",
+		"/Users/rogerthomasson/GoogleDrive/code_projects/Random_Projects/leap-year/jasmine/spec/scriptsSpec.js",
+		"/Users/rogerthomasson/GoogleDrive/code_projects/Random_Projects/leap-year/css/styles.css",
+		"/Users/rogerthomasson/GoogleDrive/code_projects/Random_Projects/pig-latin/js/scripts.js",
+		"/Users/rogerthomasson/GoogleDrive/code_projects/Random_Projects/leap-year/jasmine/SpecRunner.html",
+		"/Users/rogerthomasson/GoogleDrive/code_projects/Random_Projects/pig-latin/pig-latin.html",
+		"/Users/rogerthomasson/GoogleDrive/code_projects/Random_Projects/pig-latin/css/styles.css",
+		"/Users/rogerthomasson/GoogleDrive/code_projects/Random_Projects/pig-latin/css/bootstrap.css",
+		"/Users/rogerthomasson/Desktop/How_To_Jasmine/SpecRunner.html",
+		"/Users/rogerthomasson/Desktop/How_To_Jasmine/src/helloWorld.js",
+		"/Users/rogerthomasson/Desktop/How_To_Jasmine/spec/helloWorldSpec.js",
+		"/Users/rogerthomasson/GoogleDrive/code_projects/javascript-koans/js_koans_scratch.html",
+		"/Users/rogerthomasson/GoogleDrive/code_projects/Coderbyte/coderbyte_scratch.html",
+		"/Users/rogerthomasson/Desktop/javascript-koans-master/koans/AboutMutability.js",
+		"/Users/rogerthomasson/GoogleDrive/code_projects/javascript-koans/koans/AboutMutability.js",
+		"/Users/rogerthomasson/GoogleDrive/code_projects/javascript-koans/koans/AboutHigherOrderFunctions.js",
+		"/Users/rogerthomasson/Desktop/jasmine-standalone-2.0.0/src/helloWorld.js",
+		"/Users/rogerthomasson/Desktop/jasmine-standalone-2.0.0/spec/helloWorldSpec.js",
+		"/Users/rogerthomasson/Desktop/jasmine-standalone-2.0.0/SpecRunner.html",
+		"/Users/rogerthomasson/GoogleDrive/code_projects/javascript-koans/koans/AboutObjects.js",
+		"/Users/rogerthomasson/GoogleDrive/code_projects/Coderbyte/getCaseCombinations.html",
+		"/Users/rogerthomasson/GoogleDrive/jasmine/dist/jasmine-standalone-2.0.0/SpecRunner.html",
+		"/Users/rogerthomasson/GoogleDrive/jasmine/src/helloWorld.js",
+		"/Users/rogerthomasson/GoogleDrive/jasmine/spec/helloWorldSpec.js",
+		"/Users/rogerthomasson/GoogleDrive/code_projects/javascript-koans/koans/AboutFunctions.js",
+		"/Users/rogerthomasson/GoogleDrive/code_projects/javascript-koans/koans/AboutArrays.js",
+		"/Users/rogerthomasson/GoogleDrive/code_projects/javascript-koans/koans/AboutExpects.js",
+		"/Users/rogerthomasson/GoogleDrive/code_projects/spoon-knife/Spoon-Knife/index.html",
+		"/Users/rogerthomasson/GoogleDrive/code_projects/javascript-koans-master/koans/AboutObjects.js",
+		"/Users/rogerthomasson/GoogleDrive/code_projects/javascript-koans-master/koans/AboutMutability.js",
+		"/Users/rogerthomasson/GoogleDrive/code_projects/javascript-koans-master/koans/AboutFunctions.js",
+		"/Users/rogerthomasson/GoogleDrive/code_projects/CodingBat/recursion1/simple_recursion_practice.html",
+		"/Users/rogerthomasson/GoogleDrive/code_projects/javascript-koans-master/koans/AboutArrays.js",
+		"/Users/rogerthomasson/Desktop/javascript-koans-master/koans/AboutExpects.js",
+		"/Users/rogerthomasson/Desktop/javascript-koans-master/koans/AboutArrays.js",
+		"/Users/rogerthomasson/GoogleDrive/code_projects/Random_Projects/dynamic_quiz/dynamic_quiz.html",
+		"/Users/rogerthomasson/GoogleDrive/code_projects/Sticky Footer/sticky_footer.css",
+		"/Users/rogerthomasson/Google Drive/code_projects/Coderbyte/letter_capitalize.html",
+		"/Users/rogerthomasson/Google Drive/code_projects/Coderbyte/first_factorial.html",
+		"/Users/rogerthomasson/Google Drive/code_projects/Coderbyte/getCaseCombinations.html",
+		"/Users/rogerthomasson/Google Drive/code_projects/createRadioButtonFromArray.html",
+		"/Users/rogerthomasson/Google Drive/code_projects/dynamic_quiz.html",
+		"/Users/rogerthomasson/Google Drive/code_projects/codeschool_scratch.html",
+		"/Users/rogerthomasson/Google Drive/code_projects/Coderbyte/Palindrome/palindrome.js",
+		"/Users/rogerthomasson/Google Drive/js_cheatsheet/js_cheatsheet.html",
+		"/Users/rogerthomasson/Google Drive/js_cheatsheet.html",
+		"/Users/rogerthomasson/Google Drive/code_projects/Coderbyte/number_addition.html",
+		"/Users/rogerthomasson/Google Drive/code_projects/Coderbyte/dash_insert.html",
+		"/Users/rogerthomasson/Google Drive/code_projects/Coderbyte/check_nums.html",
+		"/Users/rogerthomasson/Google Drive/code_projects/Coderbyte/simple_symbols.html",
+		"/Users/rogerthomasson/Google Drive/code_projects/display_age.html",
+		"/Users/rogerthomasson/Google Drive/code_projects/Coderbyte/ArithGeo/arithgeo.js",
+		"/Users/rogerthomasson/Google Drive/code_projects/Coderbyte/swap_case.html",
+		"/Users/rogerthomasson/Google Drive/code_projects/tic_tac_toe.html",
+		"/Users/rogerthomasson/Google Drive/code_projects/Coderbyte/time_convert.html",
+		"/Users/rogerthomasson/Google Drive/code_projects/Coderbyte/roman_numerals.html",
+		"/Users/rogerthomasson/Google Drive/code_projects/Coderbyte/chessboard.html",
+		"/Users/rogerthomasson/Google Drive/code_projects/Coderbyte/ArithGeo/arithgeo.html",
+		"/Users/rogerthomasson/Desktop/code_projects/Coderbyte/Palindrome/palindrome.js",
+		"/Users/rogerthomasson/Desktop/code_projects/Coderbyte/Palindrome/palindrome.html",
+		"/Users/rogerthomasson/Desktop/code_projects/Coderbyte/Pallindrome/palindrome.js",
+		"/Users/rogerthomasson/Desktop/code_projects/Heads Tails/headstails.html",
+		"/Users/rogerthomasson/Desktop/code_projects/Coderbyte/Pallindrome/Palindrome.html",
+		"/Users/rogerthomasson/Desktop/code_projects/Heads Tails/headstails.js",
+		"/Users/rogerthomasson/Desktop/code_projects/Coderbyte/MeanMode/meanmode.js",
+		"/Users/rogerthomasson/Desktop/code_projects/Coderbyte/MeanMode/meanmode.html",
+		"/Users/rogerthomasson/Desktop/code_projects/DragonSlay/dragonslay.html",
+		"/Users/rogerthomasson/Desktop/code_projects/DragonSlay/dragonslay.js",
+		"/Users/rogerthomasson/Desktop/code_projects/javascript.js",
+		"/Users/rogerthomasson/Desktop/code_projects/Thinkful/37signals/application.js",
+		"/Users/rogerthomasson/Desktop/code_projects/Thinkful/37signals/main.css",
+		"/Users/rogerthomasson/Desktop/code_projects/Thinkful/37signals/index.html",
+		"/Users/rogerthomasson/Desktop/code_projects/javascript.html",
+		"/Users/rogerthomasson/Dropbox/Public/37signals/main.css",
+		"/Users/rogerthomasson/Dropbox/Public/37signals/application.js",
+		"/Users/rogerthomasson/Dropbox/Public/37signals/index.html",
+		"/Users/rogerthomasson/Dropbox/Public/Maximage/main.css",
+		"/Users/rogerthomasson/Dropbox/Public/Maximage/javascript.js",
+		"/Users/rogerthomasson/Dropbox/Public/Maximage/index.html",
+		"/Users/rogerthomasson/Desktop/code projects/Maximage/main.css",
+		"/Users/rogerthomasson/Desktop/code projects/Maximage/javascript.js",
+		"/Users/rogerthomasson/Desktop/code projects/Maximage/index.html",
+		"/Users/rogerthomasson/Desktop/code projects/factorial.html",
+		"/Users/rogerthomasson/Desktop/code projects/factorial.js",
+		"/Users/rogerthomasson/Desktop/37signals/main.css",
+		"/Users/rogerthomasson/Desktop/37signals/index.html",
+		"/Users/rogerthomasson/Desktop/code projects/Sticky Footer/untitled",
+		"/Users/rogerthomasson/Desktop/code projects/Sticky Footer/sticky_footer.html",
+		"/Users/rogerthomasson/Desktop/code projects/Sticky Footer/sticky_footer.css",
+		"/Users/rogerthomasson/Desktop/GoogleClone/index.html",
+		"/Users/rogerthomasson/Desktop/GoogleClone/main.css",
+		"/Users/rogerthomasson/Dropbox/Public/GoogleClone/main.css",
+		"/Users/rogerthomasson/Desktop/code projects/Thinkful/Backgrounds/backgrounds.css",
+		"/Users/rogerthomasson/Desktop/code projects/Thinkful/Backgrounds/backgrounds.html",
+		"/Users/rogerthomasson/Dropbox/Public/GoogleClone/index.html",
+		"/Users/rogerthomasson/Desktop/code projects/Thinkful/boxes.html",
+		"/Users/rogerthomasson/Desktop/code projects/Thinkful/boxes.css",
+		"/Users/rogerthomasson/Desktop/GoogleClone/boxes.css"
+	],
+	"find":
+	{
+		"height": 35.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"popu",
+			"popul",
+			"visible",
+			"result",
+			"var XXX = {\n// 	title: '',\n// 	description: '',\n// 	placeholder: '',\n// 	primaryFunction:,\n// 	helperFunction:\n// };",
+			"title",
+			";\n",
+			"btn",
+			"function",
+			"powern",
+			"correcti",
+			"rightw",
+			"form",
+			"form1",
+			"createR",
+			"form1",
+			"c1",
+			"radiobuttons",
+			"c1",
+			"allQuestions",
+			"methods",
+			";\n",
+			"$$2^n$$",
+			"},\n",
+			"666",
+			"400",
+			"1px"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		},
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 25.0
+	},
+	"input":
+	{
+		"height": 0.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			],
+			[
+				1,
+				0,
+				2,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			0.406047641933,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"project": "coderbyte_solutions.sublime-project",
+	"replace":
+	{
+		"height": 46.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+			[
+				"",
+				"~/GoogleDrive/code_projects/javascript-koans/koans/AboutObjects.js"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"selected_items":
+		[
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"settings":
+	{
+	},
+	"show_minimap": false,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 150.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
