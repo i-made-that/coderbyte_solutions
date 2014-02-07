@@ -5,7 +5,7 @@ var	functionContainer = document.getElementById('functionContainer'),
 		genericForm = document.getElementById('genericForm'),
 		result = document.getElementById('result'),
 		textField = document.getElementById('textField'),
-		description = document.getElementById('description'),
+		// description = document.getElementById('description'),
 		functionTitle = document.getElementById('functionTitle');
 
 var vowelCountBtn = document.getElementById('vowelCount'),
