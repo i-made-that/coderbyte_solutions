@@ -1,3 +1,5 @@
+
+
 // Declared DOM variables
 var	functionContainer = document.getElementById('functionContainer'),
 		genericForm = document.getElementById('genericForm'),
@@ -6,9 +8,9 @@ var	functionContainer = document.getElementById('functionContainer'),
 		description = document.getElementById('description'),
 		functionTitle = document.getElementById('functionTitle');
 
-var vowelCountBtn = document.getElementById('vowelCountBtn'),
-		add2Btn = document.getElementById('add2Btn'),
-		letterChangesBtn = document.getElementById('letterChangesBtn');
+var vowelCountBtn = document.getElementById('vowelCount'),
+		add2Btn = document.getElementById('add2'),
+		letterChangesBtn = document.getElementById('letterChanges');
 
 // Declared utility variables
 var	currentObject,
@@ -159,23 +161,27 @@ function buttonControl(thisObj, thisBtn) {
 		}
 	}
 
+document.getElementById('container').addEventListener('click', function(e) {
+	var x = e.srcElement.id + "Obj";
+	var y = e.srcElement.id + "Btn";
+	buttonControl(x, y); 
+}, false);
 
 // Buttons & Interactions 
-vowelCountBtn.onclick = function() {
-	'use strict';
-	buttonControl(vowelCountObj, vowelCountBtn);
-};
+// vowelCountBtn.onclick = function() {
+// 	'use strict';
+// 	buttonControl(vowelCountObj, vowelCountBtn);
+// };
 
-letterChangesBtn.onclick = function() {
-	'use strict';
-	buttonControl(letterChangesObj, letterChangesBtn);
-};
+// letterChangesBtn.onclick = function() {
+// 	'use strict';
+// 	buttonControl(letterChangesObj, letterChangesBtn);
+// };
 
-add2Btn.onclick = function() {
-	'use strict';
-	buttonControl(add2Obj, add2Btn);
-};
-
+// add2Btn.onclick = function() {
+// 	'use strict';
+// 	buttonControl(add2Obj, add2Btn);
+// };
 
 genericForm.onsubmit = function () {
 	'use strict';
@@ -185,6 +191,8 @@ genericForm.onsubmit = function () {
 	resultVisible = true;
 	return false;
 };
+
+
 
 
 
