@@ -1,3 +1,46 @@
+describe('Button', function() {
+	it('has a title', function() {});
+	it('has a clicked state', function() {});
+	it('has a blue color when clicked', function() {});
+});
+
+describe('getDataFromArray', function() ({
+	it('loops through an array to grab button data', function() {});
+	it('assigns button data to button', function() {});
+	it('creates an association between the button and the corresponding array object', function() {});
+});
+
+describe('displayFunction', function() {
+	it('appears after its corresponding button is pressed', function() {});
+	it('has a title', function() {});
+	it('has a description', function() {});
+	it('has placeholder text', function() {});
+	it('has a primaryFunction', function() {});
+	describe('innerButton', function() {
+		it('does nothing if the field is empty', function() {});
+		it('executes the primaryFunction with the userInput value as an argument', function() {});
+		it('returns the value so that the DOM can use it', function() {});
+	});
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 describe('capitalizeVowels', function() {
 	it('should capitalize all vowels in a string', function() {
 		expect(capitalizeVowels('abcde')).toBe('AbcdE');
