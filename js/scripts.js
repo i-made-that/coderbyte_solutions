@@ -1,8 +1,5 @@
 // Declared DOM variables
-var	functionContainer = document.getElementById('functionContainer'),
-		genericForm = document.getElementById('genericForm'),
-		buttons = document.getElementById('buttons'),
-		result = document.getElementById('result');
+
 		
 
 
@@ -105,6 +102,7 @@ function hideElement (element) {
 }
 
 function buildButtons (array) {
+	'use strict';
 	var len = array.length;
 	for (var i = 0; i < len; i++) {
 		var newButton = document.createElement('button');
@@ -116,9 +114,27 @@ function buildButtons (array) {
 	}
 }
 
+function populateForm (array, index) {
+	var	functionContainer = document.getElementById('functionContainer'),
+			functionTitle = document.getElementById('functionTitle'),
+			description = document.getElementById('description'),
+			placeholder = document.getElementById('placeholder'),
+			genericForm = document.getElementById('genericForm'),
+			buttons = document.getElementById('buttons'),
+			result = document.getElementById('result');
+
+	functionTitle.innerHTML=arrayOfObjects[index].title;
+	description.innerHTML=arrayOfObjects[index].description;	
+	placeholder.innerHTML=arrayOfObjects[index].placeholder;
+}
+
+buildButtons(arrayOfObjects);
 
 document.getElementById('buttons').addEventListener('click', function(e) {
-	
+	var currentButton = e.srcElement,
+			index = currentButton.dataset.index;
+	populateForm(arrayOfObjects, index);
+	showElement(functionContainer);
 }, false);
 
 
