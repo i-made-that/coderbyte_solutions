@@ -1,6 +1,7 @@
 // Declared DOM variables
 var	functionContainer = document.getElementById('functionContainer'),
 		genericForm = document.getElementById('genericForm'),
+		buttons = document.getElementById('buttons'),
 		result = document.getElementById('result');
 		
 
@@ -103,8 +104,22 @@ function hideElement (element) {
 	element.style.display = 'none';
 }
 
+function buildButtons (array) {
+	var len = array.length;
+	for (var i = 0; i < len; i++) {
+		var newButton = document.createElement('button');
+		newButton.id=arrayOfObjects[i].title;
+		newButton.className='btn';
+		newButton.dataset.index=[i];
+		newButton.innerHTML=arrayOfObjects[i].title;
+		buttons.appendChild(newButton);
+	}
+}
 
 
+document.getElementById('buttons').addEventListener('click', function(e) {
+	
+}, false);
 
 
 

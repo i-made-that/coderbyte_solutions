@@ -4,10 +4,10 @@ describe('Button', function() {
 	it('has a blue color when clicked', function() {});
 });
 
-describe('getDataFromArray', function() ({
-	it('loops through an array to grab button data', function() {});
-	it('assigns button data to button', function() {});
-	it('creates an association between the button and the corresponding array object', function() {});
+describe('buildsButtons', function() ({
+	it('loops through an array to find index and title', function() {});
+	it('stores index somehow', function() {});
+	it('populates html with buttons', function() {});
 });
 
 describe('displayFunction', function() {
