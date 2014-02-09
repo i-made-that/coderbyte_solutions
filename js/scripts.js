@@ -113,20 +113,24 @@ var State = {
 	},
 	isFormVisible: function(element) {
 		'use strict';
-		if (element.style.display === '') {
+		if (element.style.display === '' || element.style.display === 'none') {
 			return false;
 		} return true;
 	},
 	isSameButton: function(element, arr, i) {
 		'use strict';
 		if (element === arr[i].title) {}
+	},
+	userInput: function(userInput) {
+		'use strict';
+		return userInput.value;
 	}
 };
 
 
 
 var j,
-		descrip = document.getElementById('description'),
+		description = document.getElementById('description'),
 		functionTitle = document.getElementById('functionTitle');
 
 document.getElementById('container').addEventListener('click', function(e) {
@@ -135,34 +139,51 @@ document.getElementById('container').addEventListener('click', function(e) {
 			textField = document.getElementById('textField'),
 			currentState = Object.create(State);
 	if (currentButton !== 'submitButton') {
+		if (currentState.isFormVisible(functionContainer)) {
+			hideElement(functionContainer);
+		} else
 	for (var i = 0; i < arrayOfObjects.length; i++) {
 		if (currentButton === arrayOfObjects[i].title) {
 			j = i;
-			descrip.innerHTML=arrayOfObjects[i].description;
+			description.innerHTML=arrayOfObjects[i].description;
 			functionTitle.innerHTML=arrayOfObjects[i].title;
 			textField.placeholder=arrayOfObjects[i].placeholder;
 			showElement(functionContainer);
 		}
-		}
-	} else {
-		var userInput = textField.value;
-		result.innerHTML = arrayOfObjects[j].primaryFunction(userInput);
-		genericForm.reset();
-		e.preventDefault();
 	}
+} else {
+	var userInput = textField.value;
+	result.innerHTML = arrayOfObjects[j].primaryFunction(userInput);
+	genericForm.reset();
+	e.preventDefault();
+}
 }, false);
 
 
+describe('Button', function() {
+	it('has a title', function() {});
+	it('has a clicked state', function() {});
+	it('has a blue color when clicked', function() {});
+});
 
+describe('getDataFromArray', function() ({
+	it('loops through an array to grab button data', function() {});
+	it('assigns button data to button', function() {});
+	it('creates an association between the button and the corresponding array object', function() {});
+});
 
-
-
-
-
-
-
-
-
+describe('displayFunction', function() {
+	it('appears after its corresponding button is pressed', function() {});
+	it('has a title', function() {});
+	it('has a description', function() {});
+	it('has placeholder text', function() {});
+	it('has a primaryFunction', function() {});
+	describe('innerButton', function() {
+		it('does nothing if the field is empty', function() {});
+		it('executes the primaryFunction with the userInput value as an argument', function() {});
+		it('returns the value so that the DOM can use it', function() {});
+	});
+});
 
 
 
