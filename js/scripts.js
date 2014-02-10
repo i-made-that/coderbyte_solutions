@@ -1,7 +1,13 @@
 // Declared DOM variables
 var	genericForm = document.getElementById('genericForm'),
 		result = document.getElementById('result'),
-		expanded = false;
+		expanded = false,
+		oldButton,
+		i,
+		functionContainer = document.getElementById('functionContainer'),
+		answer = document.getElementById('answer'),
+		printInput = document.getElementById('printInput'),
+		textField = document.getElementById('textField');
 
 // Object literal template
 //
@@ -135,21 +141,16 @@ function populateForm (array, index) {
 
 
 buildButtons(arrayOfObjects);
-var oldButton;
+
+
 
 document.getElementById('buttons').addEventListener('click', function(e) {
 	'use strict';
+
 	var currentButton = e.srcElement,
-			functionContainer = document.getElementById('functionContainer'),
-			index = currentButton.getAttribute('data-index'),
-			answer = document.getElementById('answer'),
-			printInput = document.getElementById('printInput'),
-			textField = document.getElementById('textField');
-
-		
-	console.log(textField.value);
+			index = currentButton.getAttribute('data-index');
+			i = index;
 	
-
 	if (expanded === false) {
 		console.log('first');
 		oldButton = currentButton;
@@ -179,13 +180,11 @@ document.getElementById('buttons').addEventListener('click', function(e) {
 		hideElement(result);
 		genericForm.reset();
 	}
-
-	
-
+}, false);
 
 
-		document.getElementById('submitButton').addEventListener('click', function(e) {
-			var boom = arrayOfObjects[index].primaryFunction(textField.value),
+document.getElementById('submitButton').addEventListener('click', function(e) {
+			var boom = arrayOfObjects[i].primaryFunction(textField.value),
 					submitButton = document.getElementById('submitButton');
 
 			if (textField.value !== '') {
@@ -205,11 +204,6 @@ document.getElementById('buttons').addEventListener('click', function(e) {
 
 
 		}, false);
-
-
-}, false);
-
-
 
 
 
