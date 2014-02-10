@@ -1,18 +1,4 @@
-// Declared DOM variables
 
-		
-
-
-
-// Object literal template
-//
-// var XXX = {
-// 	title: '',
-// 	description: '',
-// 	placeholder: '',
-// 	primaryFunction:,
-// 	helperFunction:
-// };
 
 // Coderbyte Objects
 var arrayOfObjects = [
@@ -105,7 +91,9 @@ function buildButtons (array) {
 	'use strict';
 	var len = array.length;
 	for (var i = 0; i < len; i++) {
-		var newButton = document.createElement('button');
+		var buttons = document.getElementById('buttons'),
+				newButton = document.createElement('button');
+				
 		newButton.id=arrayOfObjects[i].title;
 		newButton.className='btn';
 		newButton.dataset.index=[i];
@@ -115,27 +103,42 @@ function buildButtons (array) {
 }
 
 function populateForm (array, index) {
-	var	functionContainer = document.getElementById('functionContainer'),
-			functionTitle = document.getElementById('functionTitle'),
+	'use strict';
+	var	functionTitle = document.getElementById('functionTitle'),
 			description = document.getElementById('description'),
-			placeholder = document.getElementById('placeholder'),
-			genericForm = document.getElementById('genericForm'),
-			buttons = document.getElementById('buttons'),
-			result = document.getElementById('result');
+			textField = document.getElementById('textField'),
+			genericForm = document.getElementById('genericForm');
 
 	functionTitle.innerHTML=arrayOfObjects[index].title;
-	description.innerHTML=arrayOfObjects[index].description;	
-	placeholder.innerHTML=arrayOfObjects[index].placeholder;
+	description.innerHTML=arrayOfObjects[index].description;
+	textField.placeholder=arrayOfObjects[index].placeholder;
 }
 
+
 buildButtons(arrayOfObjects);
+var resultDisplay = document.getElementById('resultDisplay');
 
 document.getElementById('buttons').addEventListener('click', function(e) {
+	'use strict';
 	var currentButton = e.srcElement,
-			index = currentButton.dataset.index;
+			functionContainer = document.getElementById('functionContainer'),
+			index = currentButton.dataset.index,
+			textField = document.getElementById('textField');			
+	
 	populateForm(arrayOfObjects, index);
 	showElement(functionContainer);
+	
+	document.getElementById('submitButton').addEventListener('click', function(e) {
+		'use strict';
+		var userInput = textField.value,
+				result = arrayOfObjects[index].primaryFunction(userInput);
+				console.log(result);
+		e.preventDefault();
+	}, false);
+
+
 }, false);
+
 
 
 
