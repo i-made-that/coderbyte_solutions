@@ -113,6 +113,17 @@ function hideElement (element) {
 	element.style.display = 'none';
 }
 
+function regexpColor(str, regexp) {
+		'use strict';
+		var newStr = '',
+				len = str.length;
+		for (var i = 0; i < len; i++) {
+			if ((str.charAt(i)).match(regexp)) {
+				newStr += '<span class=\"red\">' + str.charAt(i) + '</span>';
+			} else newStr += str.charAt(i);
+		} return newStr;
+	}
+
 function buildButtons (array) {
 	'use strict';
 	var len = array.length;
@@ -139,7 +150,7 @@ function populateForm (array, index) {
 	textField.placeholder=arrayOfObjects[index].placeholder;
 }
 
-
+alert(regexpColor('roger', /[aeiou]/gi));
 buildButtons(arrayOfObjects);
 
 
