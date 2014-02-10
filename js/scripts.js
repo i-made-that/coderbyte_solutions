@@ -1,7 +1,7 @@
 // Declared DOM variables
-var	functionContainer = document.getElementById('functionContainer'),
-		genericForm = document.getElementById('genericForm'),
-		result = document.getElementById('result');
+var	genericForm = document.getElementById('genericForm'),
+		result = document.getElementById('result'),
+		expanded = false;
 
 // Object literal template
 //
@@ -79,7 +79,13 @@ var arrayOfObjects = [
 	title: 'add2',
 	description: 'A function that adds the numeral 2 to anything',
 	placeholder: 'Text please!',
-	primaryFunction: function add2(str) { 'use strict'; return str + 2; },
+	primaryFunction: 
+		function add2(str) { 
+			'use strict'; 
+			if (str !== '') {
+				return str + 2; 
+			} else return '';
+		},
 	helperFunction: undefined
 }
 ];
@@ -120,8 +126,7 @@ function populateForm (array, index) {
 	'use strict';
 	var	functionTitle = document.getElementById('functionTitle'),
 			description = document.getElementById('description'),
-			textField = document.getElementById('textField'),
-			genericForm = document.getElementById('genericForm');
+			textField = document.getElementById('textField');
 
 	functionTitle.innerHTML=arrayOfObjects[index].title;
 	description.innerHTML=arrayOfObjects[index].description;
@@ -130,25 +135,76 @@ function populateForm (array, index) {
 
 
 buildButtons(arrayOfObjects);
-var resultDisplay = document.getElementById('resultDisplay');
+var oldButton;
 
 document.getElementById('buttons').addEventListener('click', function(e) {
 	'use strict';
 	var currentButton = e.srcElement,
 			functionContainer = document.getElementById('functionContainer'),
-			index = currentButton.dataset.index,
-			textField = document.getElementById('textField');			
+			index = currentButton.getAttribute('data-index'),
+			answer = document.getElementById('answer'),
+			printInput = document.getElementById('printInput'),
+			textField = document.getElementById('textField');
+
+		
+	console.log(textField.value);
 	
-	populateForm(arrayOfObjects, index);
-	showElement(functionContainer);
+
+	if (expanded === false) {
+		console.log('first');
+		oldButton = currentButton;
+		expanded = true;
+		hideElement(result);
+		genericForm.reset();
+		currentButton.className = 'btn btn-primary';
+		populateForm(arrayOfObjects, index);
+		showElement(functionContainer);
+	} else if (expanded === true && index === oldButton.dataset.index) {
+		console.log('second');
+		oldButton = currentButton;
+		expanded = false;
+		textField.value = '';
+		hideElement(functionContainer);
+		hideElement(result);
+		genericForm.reset();
+		currentButton.className = 'btn';
+		oldButton.className = 'btn';
+	} else if (expanded === true && index !== oldButton.dataset.index) {
+		oldButton.className = 'btn';
+		console.log('third');
+		expanded = true;
+		oldButton = currentButton;
+		currentButton.className = 'btn btn-primary';
+		populateForm(arrayOfObjects, index);
+		hideElement(result);
+		genericForm.reset();
+	}
+
 	
-	document.getElementById('submitButton').addEventListener('click', function(e) {
-		'use strict';
-		var userInput = textField.value,
-				result = arrayOfObjects[index].primaryFunction(userInput);
-				console.log(result);
-		e.preventDefault();
-	}, false);
+
+
+
+		document.getElementById('submitButton').addEventListener('click', function(e) {
+			var boom = arrayOfObjects[index].primaryFunction(textField.value),
+					submitButton = document.getElementById('submitButton');
+
+			if (textField.value !== '') {
+			printInput.innerHTML=textField.value;
+			answer.innerHTML=boom;
+			genericForm.reset();
+			showElement(result);
+			textField.focus();
+			textField.value = '';
+			e.preventDefault();
+				} else {
+					hideElement(result);
+					textField.focus();
+
+					e.preventDefault();
+				}
+
+
+		}, false);
 
 
 }, false);
