@@ -13,6 +13,7 @@ var	functionContainer = document.getElementById('functionContainer'),
 // 	helperFunction:
 // };
 
+
 // Coderbyte Objects
 var arrayOfObjects = [
 {
@@ -100,67 +101,57 @@ function hideElement (element) {
 	element.style.display = 'none';
 }
 
-
-var State = {
-	isResultDisplayed: function(element) {
-		'use strict';
-		if (element.innerHTML !== '') {
-			return true;
-		} return false;
-	},
-	isFormVisible: function(element) {
-		'use strict';
-		if (element.style.display === '') {
-			return false;
-		} return true;
-	},
-	isSameButton: function(element, arr, i) {
-		'use strict';
-		if (element === arr[i].title) {}
-	}
-};
-
-
-
-var j,
-		descrip = document.getElementById('description'),
-		functionTitle = document.getElementById('functionTitle');
-
-document.getElementById('container').addEventListener('click', function(e) {
+function buildButtons (array) {
 	'use strict';
-	var currentButton = (e.srcElement.id),
-			textField = document.getElementById('textField'),
-			currentState = Object.create(State);
-	if (currentButton !== 'submitButton') {
-	for (var i = 0; i < arrayOfObjects.length; i++) {
-		if (currentButton === arrayOfObjects[i].title) {
-			j = i;
-			descrip.innerHTML=arrayOfObjects[i].description;
-			functionTitle.innerHTML=arrayOfObjects[i].title;
-			textField.placeholder=arrayOfObjects[i].placeholder;
-			showElement(functionContainer);
-		}
-		}
-	} else {
-		var userInput = textField.value;
-		result.innerHTML = arrayOfObjects[j].primaryFunction(userInput);
-		genericForm.reset();
-		resultVisible = true;
-		e.preventDefault();
+	var len = array.length;
+	for (var i = 0; i < len; i++) {
+		var buttons = document.getElementById('buttons'),
+				newButton = document.createElement('button');
+				
+		newButton.id=arrayOfObjects[i].title;
+		newButton.className='btn';
+		newButton.dataset.index=[i];
+		newButton.innerHTML=arrayOfObjects[i].title;
+		buttons.appendChild(newButton);
 	}
+}
+
+function populateForm (array, index) {
+	'use strict';
+	var	functionTitle = document.getElementById('functionTitle'),
+			description = document.getElementById('description'),
+			textField = document.getElementById('textField'),
+			genericForm = document.getElementById('genericForm');
+
+	functionTitle.innerHTML=arrayOfObjects[index].title;
+	description.innerHTML=arrayOfObjects[index].description;
+	textField.placeholder=arrayOfObjects[index].placeholder;
+}
+
+
+buildButtons(arrayOfObjects);
+var resultDisplay = document.getElementById('resultDisplay');
+
+document.getElementById('buttons').addEventListener('click', function(e) {
+	'use strict';
+	var currentButton = e.srcElement,
+			functionContainer = document.getElementById('functionContainer'),
+			index = currentButton.dataset.index,
+			textField = document.getElementById('textField');			
+	
+	populateForm(arrayOfObjects, index);
+	showElement(functionContainer);
+	
+	document.getElementById('submitButton').addEventListener('click', function(e) {
+		'use strict';
+		var userInput = textField.value,
+				result = arrayOfObjects[index].primaryFunction(userInput);
+				console.log(result);
+		e.preventDefault();
+	}, false);
+
+
 }, false);
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
