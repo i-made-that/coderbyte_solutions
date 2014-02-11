@@ -9,8 +9,7 @@ var	genericForm = document.getElementById('genericForm'),
 		theCode = document.getElementById('functionCode'),
 		textField = document.getElementById('textField');
 
-// This is the initial button build 
-buildButtons(arrayOfObjects);
+
 
 
 
@@ -146,6 +145,9 @@ function buildButtons (array) {
 		buttons.appendChild(newButton);
 	}
 }
+
+// This is the initial button build 
+buildButtons(arrayOfObjects);
 
 // Takes and array and an index
 // Based on that index, populates HTML with text from the associated object
