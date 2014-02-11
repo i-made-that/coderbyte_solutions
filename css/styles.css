@@ -2,21 +2,23 @@
 	margin-left: 15px;
 }
 
+#description {
+	display: block;
+}
+
+#functionCode {
+	display: none;
+	padding: 10px 15px 10px 15px;
+	width: intrinsic;
+	width: -moz-max-content;
+}
+
 #functionContainer {
 	display: none;
 }
 
 .red {
 	color: red;
-}
-
-#description {
-	display: block;
-}
-
-#textField {
-	width: 200px;
-	display: inline;
 }
 
 #showCode {
@@ -26,12 +28,13 @@
 	cursor: default;
 }
 
-#functionCode {
-	display: none;
-	padding: 10px 15px 10px 15px;
-	width: intrinsic;
-	width: -moz-max-content;
+#textField {
+	width: 200px;
+	display: inline;
 }
+
+
+
 
 
 

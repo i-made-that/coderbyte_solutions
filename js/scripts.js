@@ -1,4 +1,3 @@
-// Declared DOM variables
 var	genericForm = document.getElementById('genericForm'),
 		result = document.getElementById('result'),
 		expanded = false,
@@ -10,7 +9,12 @@ var	genericForm = document.getElementById('genericForm'),
 		theCode = document.getElementById('functionCode'),
 		textField = document.getElementById('textField');
 
-// Object literal template
+// This is the initial button build 
+buildButtons(arrayOfObjects);
+
+
+
+// Object literal template, use for adding new functions
 //
 // var XXX = {
 // 	title: '',
@@ -21,7 +25,7 @@ var	genericForm = document.getElementById('genericForm'),
 // };
 
 
-// Coderbyte Objects
+// Coderbyte Object Array
 var arrayOfObjects = [
 {
 	title: 'vowelCount',
@@ -89,11 +93,6 @@ var arrayOfObjects = [
 
 
 
-
-
-
-
-// Generic Helper functions usable in any project
 function showElement (element) {
 	'use strict';
 	element.style.display = 'block';
@@ -104,6 +103,8 @@ function hideElement (element) {
 	element.style.display = 'none';
 }
 
+
+// Takes a string and regular expression, returns a HTML string with the regexp matches highlighted in a <span>
 function regexpColor(str, regexp) {
 		'use strict';
 		var newStr = '',
@@ -115,6 +116,7 @@ function regexpColor(str, regexp) {
 		} return newStr;
 	}
 
+// Takes a string (preferably code) and attempts to return HTML with the appropriate return and tab spaces in place
 function whiteSpace(str) {
 	'use strict';
 	var newStr = '';
@@ -129,6 +131,7 @@ function whiteSpace(str) {
 	} return newStr;
 }
 
+// Loops through an object array and builds HTML buttons when the appropriate properties are present
 function buildButtons (array) {
 	'use strict';
 	var len = array.length;
@@ -144,6 +147,8 @@ function buildButtons (array) {
 	}
 }
 
+// Takes and array and an index
+// Based on that index, populates HTML with text from the associated object
 function populateForm (array, index) {
 	'use strict';
 	var	functionTitle = document.getElementById('functionTitle'),
@@ -155,10 +160,12 @@ function populateForm (array, index) {
 	textField.placeholder=arrayOfObjects[index].placeholder;
 }
 
-buildButtons(arrayOfObjects);
 
 
+// Event Listeners Follow
 
+
+// Possibly somewhat convoluted means of hiding/showing the appropriate elements at the appropriate times depending on state and button clicked
 document.getElementById('buttons').addEventListener('click', function(e) {
 	'use strict';
 
@@ -166,8 +173,8 @@ document.getElementById('buttons').addEventListener('click', function(e) {
 			showCode = document.getElementById('showCode'),
 			index = currentButton.getAttribute('data-index');
 			i = index;
-	
-	if (expanded === false) {
+		
+	if (expanded === false) { // If nothing has been expanded...	
 		// console.log('first');
 		oldButton = currentButton;
 		expanded = true;
@@ -178,7 +185,7 @@ document.getElementById('buttons').addEventListener('click', function(e) {
 		populateForm(arrayOfObjects, index);
 		showElement(functionContainer);
 		showElement(showCode);
-	} else if (expanded === true && index === oldButton.dataset.index) {
+	} else if (expanded === true && index === oldButton.dataset.index) { // If a pane is expanded, clicking the same button will close it again
 		// console.log('second');
 		oldButton = currentButton;
 		expanded = false;
@@ -190,7 +197,7 @@ document.getElementById('buttons').addEventListener('click', function(e) {
 		genericForm.reset();
 		currentButton.className = 'btn';
 		oldButton.className = 'btn';
-	} else if (expanded === true && index !== oldButton.dataset.index) {
+	} else if (expanded === true && index !== oldButton.dataset.index) { // If a pane is expanded, clicking a different button will re-populate fields with the appropriate data
 		// console.log('third');
 		oldButton.className = 'btn';
 		oldButton = currentButton;
@@ -205,11 +212,12 @@ document.getElementById('buttons').addEventListener('click', function(e) {
 }, false);
 
 
+// This button is responsible for executing whatever funcion is currently expanded
 document.getElementById('submitButton').addEventListener('click', function(e) {
 	'use strict';
 	var boom = arrayOfObjects[i].primaryFunction(textField.value);
 
-	if (textField.value !== '') {
+	if (textField.value !== '') { // If the user has input data, execute the function and show some stuff
 		printInput.innerHTML=textField.value;
 		answer.innerHTML=boom;
 		genericForm.reset();
@@ -217,7 +225,7 @@ document.getElementById('submitButton').addEventListener('click', function(e) {
 		textField.focus();
 		textField.value = '';
 		e.preventDefault();
-	} else {
+	} else { // If the input field is empty, do nothing
 		hideElement(result);
 		textField.focus();
 		e.preventDefault();
@@ -225,6 +233,7 @@ document.getElementById('submitButton').addEventListener('click', function(e) {
 }, false);
 
 
+// These buttons show and hide the code for the related function.  Grabbed via 'i' from the array object and pretty printed via whiteSpace function
 document.getElementById('showCode').addEventListener('mouseover', function() {
 	'use strict';
 	var stringCode = arrayOfObjects[i].primaryFunction.toString();
