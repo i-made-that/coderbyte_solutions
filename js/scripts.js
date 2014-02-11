@@ -7,6 +7,7 @@ var	genericForm = document.getElementById('genericForm'),
 		functionContainer = document.getElementById('functionContainer'),
 		answer = document.getElementById('answer'),
 		printInput = document.getElementById('printInput'),
+		theCode = document.getElementById('functionCode'),
 		textField = document.getElementById('textField');
 
 // Object literal template
@@ -124,6 +125,24 @@ function regexpColor(str, regexp) {
 		} return newStr;
 	}
 
+var x = arrayOfObjects[0].primaryFunction,
+		y = x.toString(),
+		z = whiteSpace(y);
+
+
+function whiteSpace(str) {
+	var newStr = '';
+	for (var i = 0; i < str.length; i++) {
+		
+		if (str[i].match(/\n/)) {
+			newStr += '<br>';
+		} else if (str[i].match(/\t/)) {
+		newStr += '&nbsp;&nbsp;';
+
+		}else newStr += str[i];
+	} return newStr;
+}
+
 function buildButtons (array) {
 	'use strict';
 	var len = array.length;
@@ -150,7 +169,6 @@ function populateForm (array, index) {
 	textField.placeholder=arrayOfObjects[index].placeholder;
 }
 
-alert(regexpColor('roger', /[aeiou]/gi));
 buildButtons(arrayOfObjects);
 
 
@@ -168,15 +186,19 @@ document.getElementById('buttons').addEventListener('click', function(e) {
 		expanded = true;
 		hideElement(result);
 		genericForm.reset();
+		textField.focus();
 		currentButton.className = 'btn btn-primary';
 		populateForm(arrayOfObjects, index);
 		showElement(functionContainer);
+		showElement(showCode);
 	} else if (expanded === true && index === oldButton.dataset.index) {
 		console.log('second');
 		oldButton = currentButton;
 		expanded = false;
 		textField.value = '';
+		textField.focus();
 		hideElement(functionContainer);
+		hideElement(showCode);
 		hideElement(result);
 		genericForm.reset();
 		currentButton.className = 'btn';
@@ -186,9 +208,11 @@ document.getElementById('buttons').addEventListener('click', function(e) {
 		console.log('third');
 		expanded = true;
 		oldButton = currentButton;
+		textField.focus();
 		currentButton.className = 'btn btn-primary';
 		populateForm(arrayOfObjects, index);
 		hideElement(result);
+		showElement(showCode);
 		genericForm.reset();
 	}
 }, false);
@@ -215,6 +239,26 @@ document.getElementById('submitButton').addEventListener('click', function(e) {
 
 
 		}, false);
+
+
+document.getElementById('showCode').addEventListener('mouseover', function(e) {
+	var stringCode = arrayOfObjects[i].primaryFunction.toString();
+	theCode.innerHTML = whiteSpace(stringCode);
+	showElement(theCode);
+}, false);
+
+document.getElementById('showCode').addEventListener('mouseout', function(e) {
+	hideElement(theCode);
+}, false);
+
+
+
+
+
+
+
+
+
 
 
 

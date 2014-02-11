@@ -1,4 +1,8 @@
 
+cursor {
+
+}
+
 #container {
 	margin-left: 15px;
 }
@@ -11,9 +15,27 @@
 	color: red;
 }
 
+#description {
+	display: block;
+}
+
 #textField {
-	width: 200px;
+	width: 200px;/*
+	margin-bottom: 15px;*/
+	display: inline;
+}
+
+#showCode {
+	display: none;
+	margin-top: 15px;
 	margin-bottom: 15px;
+	cursor: default;
+}
+
+#functionCode {
+	display: none;
+	padding: 10px 15px 10px 15px;
+	width: intrinsic;
 }
 
 
