@@ -35,19 +35,9 @@ var arrayOfObjects = [
 				return '';
 			} else if (matchArray === null) {
 				return '0 vowels total';
-			} else return matchArray.length + ' vowels total in ' + '"' + this.helperFunction(str) + '"' ;
+			} else return matchArray.length + ' vowels total in ' + '"' + regexpColor(str, /[aeiou]/gi) + '"' ;
 		},
-	helperFunction:
-		function vowelColor(str) {
-		'use strict';
-		var newStr = '',
-				len = str.length;
-		for (var i = 0; i < len; i++) {
-			if ((str.charAt(i)).match(/[aeiou]/gi)) {
-				newStr += '<span class=\"red\">' + str.charAt(i) + '</span>';
-			} else newStr += str.charAt(i);
-		} return newStr;
-	}
+	helperFunction: undefined
 },
 
 {
@@ -173,6 +163,7 @@ document.getElementById('buttons').addEventListener('click', function(e) {
 	'use strict';
 
 	var currentButton = e.target,
+			showCode = document.getElementById('showCode'),
 			index = currentButton.getAttribute('data-index');
 			i = index;
 	
@@ -216,8 +207,7 @@ document.getElementById('buttons').addEventListener('click', function(e) {
 
 document.getElementById('submitButton').addEventListener('click', function(e) {
 	'use strict';
-	var boom = arrayOfObjects[i].primaryFunction(textField.value),
-			submitButton = document.getElementById('submitButton');
+	var boom = arrayOfObjects[i].primaryFunction(textField.value);
 
 	if (textField.value !== '') {
 		printInput.innerHTML=textField.value;
@@ -235,13 +225,15 @@ document.getElementById('submitButton').addEventListener('click', function(e) {
 }, false);
 
 
-document.getElementById('showCode').addEventListener('mouseover', function(e) {
+document.getElementById('showCode').addEventListener('mouseover', function() {
+	'use strict';
 	var stringCode = arrayOfObjects[i].primaryFunction.toString();
 	theCode.innerHTML = whiteSpace(stringCode);
 	showElement(theCode);
 }, false);
 
-document.getElementById('showCode').addEventListener('mouseout', function(e) {
+document.getElementById('showCode').addEventListener('mouseout', function() {
+	'use strict';
 	hideElement(theCode);
 }, false);
 
