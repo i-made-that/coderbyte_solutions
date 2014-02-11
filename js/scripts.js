@@ -86,11 +86,11 @@ var arrayOfObjects = [
 	title: 'add2',
 	description: 'A function that adds the numeral 2 to anything',
 	placeholder: 'Text please!',
-	primaryFunction: 
-		function add2(str) { 
-			'use strict'; 
+	primaryFunction:
+		function add2(str) {
+			'use strict';
 			if (str !== '') {
-				return str + 2; 
+				return str + 2;
 			} else return '';
 		},
 	helperFunction: undefined
@@ -125,12 +125,8 @@ function regexpColor(str, regexp) {
 		} return newStr;
 	}
 
-var x = arrayOfObjects[0].primaryFunction,
-		y = x.toString(),
-		z = whiteSpace(y);
-
-
 function whiteSpace(str) {
+	'use strict';
 	var newStr = '';
 	for (var i = 0; i < str.length; i++) {
 		
@@ -174,16 +170,14 @@ buildButtons(arrayOfObjects);
 
 
 document.getElementById('buttons').addEventListener('click', function(e) {
-	// 'use strict';
+	'use strict';
 
 	var currentButton = e.target,
 			index = currentButton.getAttribute('data-index');
 			i = index;
-
-			console.log(e.srcElement);
 	
 	if (expanded === false) {
-		console.log('first');
+		// console.log('first');
 		oldButton = currentButton;
 		expanded = true;
 		hideElement(result);
@@ -194,7 +188,7 @@ document.getElementById('buttons').addEventListener('click', function(e) {
 		showElement(functionContainer);
 		showElement(showCode);
 	} else if (expanded === true && index === oldButton.dataset.index) {
-		console.log('second');
+		// console.log('second');
 		oldButton = currentButton;
 		expanded = false;
 		textField.value = '';
@@ -206,10 +200,10 @@ document.getElementById('buttons').addEventListener('click', function(e) {
 		currentButton.className = 'btn';
 		oldButton.className = 'btn';
 	} else if (expanded === true && index !== oldButton.dataset.index) {
+		// console.log('third');
 		oldButton.className = 'btn';
-		console.log('third');
-		expanded = true;
 		oldButton = currentButton;
+		expanded = true;
 		textField.focus();
 		currentButton.className = 'btn btn-primary';
 		populateForm(arrayOfObjects, index);
@@ -221,26 +215,24 @@ document.getElementById('buttons').addEventListener('click', function(e) {
 
 
 document.getElementById('submitButton').addEventListener('click', function(e) {
-			var boom = arrayOfObjects[i].primaryFunction(textField.value),
-					submitButton = document.getElementById('submitButton');
+	'use strict';
+	var boom = arrayOfObjects[i].primaryFunction(textField.value),
+			submitButton = document.getElementById('submitButton');
 
-			if (textField.value !== '') {
-			printInput.innerHTML=textField.value;
-			answer.innerHTML=boom;
-			genericForm.reset();
-			showElement(result);
-			textField.focus();
-			textField.value = '';
-			e.preventDefault();
-				} else {
-					hideElement(result);
-					textField.focus();
-
-					e.preventDefault();
-				}
-
-
-		}, false);
+	if (textField.value !== '') {
+		printInput.innerHTML=textField.value;
+		answer.innerHTML=boom;
+		genericForm.reset();
+		showElement(result);
+		textField.focus();
+		textField.value = '';
+		e.preventDefault();
+	} else {
+		hideElement(result);
+		textField.focus();
+		e.preventDefault();
+	}
+}, false);
 
 
 document.getElementById('showCode').addEventListener('mouseover', function(e) {
