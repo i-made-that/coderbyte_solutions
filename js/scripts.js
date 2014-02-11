@@ -174,11 +174,13 @@ buildButtons(arrayOfObjects);
 
 
 document.getElementById('buttons').addEventListener('click', function(e) {
-	'use strict';
+	// 'use strict';
 
-	var currentButton = e.srcElement,
+	var currentButton = e.target,
 			index = currentButton.getAttribute('data-index');
 			i = index;
+
+			console.log(e.srcElement);
 	
 	if (expanded === false) {
 		console.log('first');
