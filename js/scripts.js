@@ -155,6 +155,36 @@ var arrayOfObjects = [
 },
 
 {
+	title: 'palindrome',
+	description: 'Determines whether or not a string is a Palindrome.<br>Ignores numbers and punctuation.<br>Spaces don\'t count.',
+	placeholder: 'Type me anything',
+	primaryFunction:
+	function Palindrome(str) { 
+    var newStr = "";
+	
+
+		var removeSpaces = function(str){
+			var noSpaceStr = "";
+			for (var i = 0; i < str.length; i++){
+				if (str.charAt(i) !== " "){
+					noSpaceStr += str.charAt(i);
+				}
+			}
+			return noSpaceStr;	
+		};
+
+
+		for (var i = removeSpaces(str).length; i >= 0; i--){
+			newStr = newStr + removeSpaces(str).charAt(i);
+		}
+		if (removeSpaces(str) === newStr){
+			return 'Success! Palindrome!';
+		} else return 'Sorry, not a palindrome...'; 
+	},
+	helperFunction: undefined
+},
+
+{
 	title: 'simpleAdding',
 	description: 'Adds all the numbers up from 1 to n (n being your input)',
 	placeholder: 'Type me a number',
