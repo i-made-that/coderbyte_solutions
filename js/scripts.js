@@ -26,6 +26,30 @@ var	genericForm = document.getElementById('genericForm'),
 // Coderbyte Object Array
 var arrayOfObjects = [
 {
+	title: 'abCheck',
+	description: 'Reports whether the letters \'a\' and \'b\' occur in a string, and are also separated by 3 places.',
+	placeholder: 'Type me anything',
+	primaryFunction:
+	function ABCheck(str) {
+		if (str.match(/[aA]...[bB]/g) || str.match(/[bB]...[aA]/g)) {
+			return 'Well yes, they are!';
+		} return 'No such luck...';
+	},
+	helperFunction: undefined
+},
+
+{
+	title: 'alphabetSoup',
+	description: 'Alphabetizes a string, numbers first',
+	placeholder: 'Type me anything',
+	primaryFunction:
+		function AlphabetSoup(str) {   
+  		return str.split("").sort().join("");
+  	},
+	helperFunction: undefined
+},
+
+{
 	title: 'firstFactorial',
 	description: 'Takes number, returns factorial',
 	placeholder: 'Type me a number',
@@ -33,11 +57,11 @@ var arrayOfObjects = [
 	function firstFactorial (num) {
 		'use strict';
 		if (isNaN(num)) {
-			return '<span class="red">I need an integer, please!</span>';
+			return '<span class="red">I need a number, please!</span>';
 		} else if (parseInt(num) === 0) {
 			return num + '!' + ' is equal to 1';
 		} else if (num < 0) {
-			return '<span class="red">I need a POSITIVE integer, please!</span>';
+			return '<span class="red">I need a POSITIVE number, please!</span>';
 		} else {
 			var result = num;
 			for (var i = num; i > 1; i--) {
@@ -54,16 +78,33 @@ var arrayOfObjects = [
 	description: 'This function reverses a string',
 	placeholder: 'Type me anything',
 	primaryFunction:
-	function firstReverse(str) {
-		'use strict';
-		return 'Reversed: ' + str.split('').reverse().join('');
+		function firstReverse(str) {
+			'use strict';
+			return 'Reversed: ' + str.split('').reverse().join('');
+		},
+	helperFunction: undefined
+},
+
+{
+	title: 'letterCapitalize',
+	description: 'Capitalize the first letter of each word.',
+	placeholder: 'Type me anything',
+	primaryFunction:
+		function LetterCapitalize (str) {
+			var newStr = str.charAt(0).toUpperCase();
+			for (var i = 1; i < str.length; i++) {
+				if (str.charAt(i - 1) === " ") {
+					newStr += str.charAt(i).toUpperCase();
+				} else newStr += str.charAt(i);
+			}
+		return newStr;
 	},
 	helperFunction: undefined
 },
 
 {
 	title: 'letterChanges',
-	description: 'A function that takes a string, and replaces every letter in the string with the letter that follows in the alphabet.  <br>Then, it capitalizes all vowels.  <br>Numbers stay the same.',
+	description: 'A function that takes a string, and replaces every letter in the string with the letter that follows in the alphabet.<br>Then, it capitalizes all vowels.<br>Numbers stay the same.',
 	placeholder: 'Type me anything',
 	primaryFunction:
 		function letterChanges(str) {
@@ -91,6 +132,76 @@ var arrayOfObjects = [
 		}
 		return newStr;
 	}
+},
+
+{
+	title: 'longestWord',
+	description: 'Returns the longest word in a sentence.<br>If there is more than one longest word with the same length, it returns the first.<br>Symbols and punctuation are <em>not</em> accounted for.',
+	placeholder: 'Type me anything',
+	primaryFunction: 
+		function LongestWord(sen) {
+			'use strict';
+			var noPunc = sen.replace(/[^\w\s]|_/g, "")
+			var wordArray = noPunc.split(" ");
+			var longWord = wordArray[0];
+			for( var i=1; i < wordArray.length; i++ ){
+				if (wordArray[i].length > longWord.length){
+					longWord = wordArray[i];
+				}
+			}
+			return 'The longest word is: ' + longWord;
+},
+	helperFunction: undefined
+},
+
+{
+	title: 'simpleAdding',
+	description: 'Adds all the numbers up from 1 to n (n being your input)',
+	placeholder: 'Type me a number',
+	primaryFunction:
+		function SimpleAdding(num) { 
+			'use strict';
+			if (isNaN(num)) {
+				return '<span class="red">I need a number, please!</span>';
+			} else if (parseInt(num) === 0) {
+				return num + '!' + ' is equal to 1';
+			} else if (num < 0) {
+				return '<span class="red">I need a POSITIVE number, please!</span>';
+			} else if (num % 1 !== 0) {
+				return '<span class="red">No decimals, please!</span>';
+			} else if (parseInt(num) === 1) {
+				return 1;
+			} else if (parseInt(num) === 2) {
+				return '1 + 2 = 3';
+			} else 
+			{
+				var temp = 0;
+				for(var i = 1; i <= num; i++){
+					temp = temp + i;
+				};
+				return '1 + 2 + 3 + (...) = ' + temp;
+			}
+		},
+	helperFunction: undefined
+},
+
+{
+	title: 'simpleSymbols',
+	description: 'Determines if a string is an acceptable sequence.<br>\'Acceptable\' means that any letter must be surrounded by a \'+\' symbol',
+	placeholder: 'Type me anything',
+	primaryFunction: 
+		function simpleSymbols(str) {
+			var isIt = false;
+			for (var i = 0; i < str.length; i++) {
+				if (/[a-z]/.test(str.charAt(i))) {
+					if (str.charAt(i + 1) === "+" && str.charAt(i - 1) === "+") {
+						isIt = true;
+					} else return '<span class="red">NOT</span>  acceptable!';
+				}
+			}
+			if (isIt) {return 'Acceptable!'};
+		},
+	helperFunction: undefined
 },
 
 {
