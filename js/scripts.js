@@ -31,6 +31,7 @@ var arrayOfObjects = [
 	placeholder: 'Type me anything',
 	primaryFunction:
 	function abCheck(str) {
+		'use strict';
 		if (str.match(/[aA]...[bB]/g) || str.match(/[bB]...[aA]/g)) {
 			return 'Well yes, they are!';
 		} return 'No such luck...';
@@ -43,9 +44,10 @@ var arrayOfObjects = [
 	description: 'Alphabetizes a string, numbers first',
 	placeholder: 'Type me anything',
 	primaryFunction:
-		function alphabetSoup(str) {   
-  		return str.split("").sort().join("");
-  	},
+		function alphabetSoup(str) {
+			'use strict';
+			return str.split('').sort().join('');
+		},
 	helperFunction: undefined
 },
 
@@ -55,11 +57,12 @@ var arrayOfObjects = [
 	placeholder: 'Type me anything',
 	primaryFunction:
 		function dashInsert (num) {
+			'use strict';
 			var str = num.toString();
-			var newStr = "";
+			var newStr = '';
 			for (var i = 0; i < str.length; i++) {
 				if ((str.charAt(i) % 2 === 1) && (str.charAt(i+1) % 2 === 1)) {
-					newStr += str.charAt(i) + "-";
+					newStr += str.charAt(i) + '-';
 				} else newStr += str.charAt(i);
 			}
 			return newStr;
@@ -169,6 +172,33 @@ var arrayOfObjects = [
 			}
 			return 'The longest word is: ' + longWord;
 },
+	helperFunction: undefined
+},
+
+{
+	title: 'numberAddition',
+	description: 'Adds all numbers found in a string (with or without letters & symbols).<br>Adjacent numbers matter (AKA 88sb3 = 91; 8b8b3 = 19)',
+	placeholder: 'Type me anything',
+	primaryFunction:
+		function numberAddition (str) {
+			var total = 0;
+			var num = 0;
+			for (var i = 0; i < str.length; i++) {
+				if (str.charAt(i) === " ") {
+					total += parseInt(num);
+					num = 0;
+				}
+				else if (!isNaN(str.charAt(i))) {
+					num += str.charAt(i);
+				}
+				else {
+					total += parseInt(num);
+					num = 0;
+				}
+			}
+			total += parseInt(num);
+			return total;
+		},
 	helperFunction: undefined
 },
 
