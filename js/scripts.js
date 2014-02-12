@@ -30,7 +30,7 @@ var arrayOfObjects = [
 	description: 'Reports whether the letters \'a\' and \'b\' occur in a string, and are also separated by 3 places.',
 	placeholder: 'Type me anything',
 	primaryFunction:
-	function ABCheck(str) {
+	function abCheck(str) {
 		if (str.match(/[aA]...[bB]/g) || str.match(/[bB]...[aA]/g)) {
 			return 'Well yes, they are!';
 		} return 'No such luck...';
@@ -43,9 +43,27 @@ var arrayOfObjects = [
 	description: 'Alphabetizes a string, numbers first',
 	placeholder: 'Type me anything',
 	primaryFunction:
-		function AlphabetSoup(str) {   
+		function alphabetSoup(str) {   
   		return str.split("").sort().join("");
   	},
+	helperFunction: undefined
+},
+
+{
+	title: 'dashInsert',
+	description: 'Inserts dashes between each 2 odd numbers.<br>0 doesn\'t count as odd',
+	placeholder: 'Type me anything',
+	primaryFunction:
+		function dashInsert (num) {
+			var str = num.toString();
+			var newStr = "";
+			for (var i = 0; i < str.length; i++) {
+				if ((str.charAt(i) % 2 === 1) && (str.charAt(i+1) % 2 === 1)) {
+					newStr += str.charAt(i) + "-";
+				} else newStr += str.charAt(i);
+			}
+			return newStr;
+		},
 	helperFunction: undefined
 },
 
@@ -90,7 +108,7 @@ var arrayOfObjects = [
 	description: 'Capitalize the first letter of each word.',
 	placeholder: 'Type me anything',
 	primaryFunction:
-		function LetterCapitalize (str) {
+		function letterCapitalize (str) {
 			var newStr = str.charAt(0).toUpperCase();
 			for (var i = 1; i < str.length; i++) {
 				if (str.charAt(i - 1) === " ") {
@@ -139,7 +157,7 @@ var arrayOfObjects = [
 	description: 'Returns the longest word in a sentence.<br>If there is more than one longest word with the same length, it returns the first.<br>Symbols and punctuation are <em>not</em> accounted for.',
 	placeholder: 'Type me anything',
 	primaryFunction: 
-		function LongestWord(sen) {
+		function longestWord(sen) {
 			'use strict';
 			var noPunc = sen.replace(/[^\w\s]|_/g, "")
 			var wordArray = noPunc.split(" ");
@@ -159,7 +177,7 @@ var arrayOfObjects = [
 	description: 'Determines whether or not a string is a Palindrome.<br>Ignores numbers and punctuation.<br>Spaces don\'t count.',
 	placeholder: 'Type me anything',
 	primaryFunction:
-	function Palindrome(str) { 
+	function palindrome(str) { 
     var newStr = "";
 	
 
@@ -189,7 +207,7 @@ var arrayOfObjects = [
 	description: 'Adds all the numbers up from 1 to n (n being your input)',
 	placeholder: 'Type me a number',
 	primaryFunction:
-		function SimpleAdding(num) { 
+		function simpleAdding(num) { 
 			'use strict';
 			if (isNaN(num)) {
 				return '<span class="red">I need a number, please!</span>';
@@ -230,6 +248,25 @@ var arrayOfObjects = [
 				}
 			}
 			if (isIt) {return 'Acceptable!'};
+		},
+	helperFunction: undefined
+},
+
+{
+	title: 'swapCase',
+	description: 'Swaps the upper/lower case of each letter, depending on their original case.<br>Numbers and symbols stay the same.',
+	placeholder: 'Type me anything',
+	primaryFunction:
+		function swapCase(str) { 
+		  var newStr = "";
+		  for (var i = 0; i < str.length; i++)
+		    if ( str.charAt(i) == str.charAt(i).toUpperCase() ) {
+		      newStr = newStr + str.charAt(i).toLowerCase();
+		    }
+		    else if ( str.charAt(i) == str.charAt(i).toLowerCase() ) {
+		    	newStr = newStr + str.charAt(i).toUpperCase();
+		    } 
+		  return newStr;
 		},
 	helperFunction: undefined
 },
