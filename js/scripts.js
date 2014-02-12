@@ -112,9 +112,10 @@ var arrayOfObjects = [
 	placeholder: 'Type me anything',
 	primaryFunction:
 		function letterCapitalize (str) {
+			'use strict';
 			var newStr = str.charAt(0).toUpperCase();
 			for (var i = 1; i < str.length; i++) {
-				if (str.charAt(i - 1) === " ") {
+				if (str.charAt(i - 1) === ' ') {
 					newStr += str.charAt(i).toUpperCase();
 				} else newStr += str.charAt(i);
 			}
@@ -159,11 +160,11 @@ var arrayOfObjects = [
 	title: 'longestWord',
 	description: 'Returns the longest word in a sentence.<br>If there is more than one longest word with the same length, it returns the first.<br>Symbols and punctuation are <em>not</em> accounted for.',
 	placeholder: 'Type me anything',
-	primaryFunction: 
+	primaryFunction:
 		function longestWord(sen) {
 			'use strict';
-			var noPunc = sen.replace(/[^\w\s]|_/g, "")
-			var wordArray = noPunc.split(" ");
+			var noPunc = sen.replace(/[^\w\s]|_/g, '');
+			var wordArray = noPunc.split(' ');
 			var longWord = wordArray[0];
 			for( var i=1; i < wordArray.length; i++ ){
 				if (wordArray[i].length > longWord.length){
@@ -181,10 +182,11 @@ var arrayOfObjects = [
 	placeholder: 'Type me anything',
 	primaryFunction:
 		function numberAddition (str) {
+			'use strict';
 			var total = 0;
 			var num = 0;
 			for (var i = 0; i < str.length; i++) {
-				if (str.charAt(i) === " ") {
+				if (str.charAt(i) === ' ') {
 					total += parseInt(num);
 					num = 0;
 				}
@@ -207,27 +209,26 @@ var arrayOfObjects = [
 	description: 'Determines whether or not a string is a Palindrome.<br>Ignores numbers and punctuation.<br>Spaces don\'t count.',
 	placeholder: 'Type me anything',
 	primaryFunction:
-	function palindrome(str) { 
-    var newStr = "";
+	function palindrome(str) {
+		'use strict';
+    var newStr = '';
 	
 
 		var removeSpaces = function(str){
-			var noSpaceStr = "";
+			var noSpaceStr = '';
 			for (var i = 0; i < str.length; i++){
-				if (str.charAt(i) !== " "){
+				if (str.charAt(i) !== ' '){
 					noSpaceStr += str.charAt(i);
 				}
 			}
-			return noSpaceStr;	
+			return noSpaceStr;
 		};
-
-
 		for (var i = removeSpaces(str).length; i >= 0; i--){
 			newStr = newStr + removeSpaces(str).charAt(i);
 		}
 		if (removeSpaces(str) === newStr){
 			return 'Success! Palindrome!';
-		} else return 'Sorry, not a palindrome...'; 
+		} else return 'Sorry, not a palindrome...';
 	},
 	helperFunction: undefined
 },
@@ -237,7 +238,7 @@ var arrayOfObjects = [
 	description: 'Adds all the numbers up from 1 to n (n being your input)',
 	placeholder: 'Type me a number',
 	primaryFunction:
-		function simpleAdding(num) { 
+		function simpleAdding(num) {
 			'use strict';
 			if (isNaN(num)) {
 				return '<span class="red">I need a number, please!</span>';
@@ -251,12 +252,12 @@ var arrayOfObjects = [
 				return 1;
 			} else if (parseInt(num) === 2) {
 				return '1 + 2 = 3';
-			} else 
+			} else
 			{
 				var temp = 0;
 				for(var i = 1; i <= num; i++){
 					temp = temp + i;
-				};
+				}
 				return '1 + 2 + 3 + (...) = ' + temp;
 			}
 		},
@@ -267,17 +268,20 @@ var arrayOfObjects = [
 	title: 'simpleSymbols',
 	description: 'Determines if a string is an acceptable sequence.<br>\'Acceptable\' means that any letter must be surrounded by a \'+\' symbol',
 	placeholder: 'Type me anything',
-	primaryFunction: 
+	primaryFunction:
 		function simpleSymbols(str) {
+			'use strict';
 			var isIt = false;
 			for (var i = 0; i < str.length; i++) {
 				if (/[a-z]/.test(str.charAt(i))) {
-					if (str.charAt(i + 1) === "+" && str.charAt(i - 1) === "+") {
+					if (str.charAt(i + 1) === '+' && str.charAt(i - 1) === '+') {
 						isIt = true;
 					} else return '<span class="red">NOT</span>  acceptable!';
 				}
 			}
-			if (isIt) {return 'Acceptable!'};
+			if (isIt) {
+				return 'Acceptable!';
+			}
 		},
 	helperFunction: undefined
 },
@@ -287,17 +291,17 @@ var arrayOfObjects = [
 	description: 'Swaps the upper/lower case of each letter, depending on their original case.<br>Numbers and symbols stay the same.',
 	placeholder: 'Type me anything',
 	primaryFunction:
-		function swapCase(str) { 
-		  var newStr = "";
+		function swapCase(str) {
+			'use strict';
+		  var newStr = '';
 		  for (var i = 0; i < str.length; i++)
-		    if ( str.charAt(i) == str.charAt(i).toUpperCase() ) {
+		    if (str.charAt(i) == str.charAt(i).toUpperCase()) {
 		      newStr = newStr + str.charAt(i).toLowerCase();
-		    }
-		    else if ( str.charAt(i) == str.charAt(i).toLowerCase() ) {
+		    } else if (str.charAt(i) == str.charAt(i).toLowerCase()) {
 		    	newStr = newStr + str.charAt(i).toUpperCase();
-		    } 
-		  return newStr;
-		},
+		    }
+		    return newStr;
+		  },
 	helperFunction: undefined
 },
 
