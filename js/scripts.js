@@ -22,8 +22,10 @@ var	genericForm = document.getElementById('genericForm'),
 // 	helperFunction: undefined
 // },
 
-
-// Coderbyte Object Array
+///////////////////////////////////////////////////////////////////////////////////
+// Big Coderbyte Object Array
+//
+//
 var arrayOfObjects = [
 {
 	title: 'abCheck',
@@ -322,9 +324,13 @@ var arrayOfObjects = [
 	helperFunction: undefined
 }
 ];
+//
+//
+//
+// End Big CoderByte Object Array
+////////////////////////////////////////////////////////////////////////////
 
-
-
+// Some self-explanatory show/hide functions
 function showElement (element) {
 	'use strict';
 	element.style.display = 'block';
@@ -349,7 +355,7 @@ function regexpColor(str, regexp) {
 	}
 
 // Takes a string (preferably code) and attempts to return HTML with the appropriate return and tab spaces in place
-function whiteSpace(str) {
+function prettyCode(str) {
 	'use strict';
 	var newStr = '';
 	for (var i = 0; i < str.length; i++) {
@@ -472,7 +478,7 @@ document.getElementById('submitButton').addEventListener('click', function(e) {
 document.getElementById('showCode').addEventListener('mouseover', function() {
 	'use strict';
 	var stringCode = arrayOfObjects[i].primaryFunction.toString();
-	theCode.innerHTML = whiteSpace(stringCode);
+	theCode.innerHTML = prettyCode(stringCode);
 	showElement(theCode);
 }, false);
 
