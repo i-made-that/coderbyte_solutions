@@ -6,6 +6,11 @@
 	display: block;
 }
 
+#error {
+	display: none;
+	color: red;
+}
+
 #functionCode {
 	display: none;
 	padding: 10px 15px 10px 15px;
@@ -21,9 +26,13 @@
 	color: red;
 }
 
+#result {
+	margin-top: 20px;
+}
+
 #showCode {
 	display: none;
-	margin-top: 15px;
+	margin-top: 25px;
 	margin-bottom: 15px;
 	cursor: default;
 }

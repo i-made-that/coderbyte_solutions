@@ -12,7 +12,6 @@ var	genericForm = document.getElementById('genericForm'),
 
 
 
-
 // Object literal template, use for adding new functions
 //
 // {
@@ -28,15 +27,24 @@ var	genericForm = document.getElementById('genericForm'),
 var arrayOfObjects = [
 {
 	title: 'firstFactorial',
-	description: 'Takes a number, returns it\'s factorial',
-	placeholder: 'Type me anything',
+	description: 'Takes number, returns factorial',
+	placeholder: 'Type me a number',
 	primaryFunction:
-	function FirstFactorial (num) {
-		var result = num;
-		for (var i = num; i > 1; i--) {
-			result *= (i -1);
+	function firstFactorial (num) {
+		'use strict';
+		if (isNaN(num)) {
+			return '<span class="red">I need an integer, please!</span>';
+		} else if (parseInt(num) === 0) {
+			return num + '!' + ' is equal to 1';
+		} else if (num < 0) {
+			return '<span class="red">I need a POSITIVE integer, please!</span>';
+		} else {
+			var result = num;
+			for (var i = num; i > 1; i--) {
+				result *= (i -1);
+			}
+			return num + '!' + ' is equal to ' + Math.round(result);
 		}
-		return result;
 	},
 	helperFunction: undefined
 },
@@ -47,14 +55,15 @@ var arrayOfObjects = [
 	placeholder: 'Type me anything',
 	primaryFunction:
 	function firstReverse(str) {
-		return str.split("").reverse().join("");
+		'use strict';
+		return 'Reversed: ' + str.split('').reverse().join('');
 	},
 	helperFunction: undefined
 },
 
 {
 	title: 'letterChanges',
-	description: 'A function that takes a string, and replaces every letter in the string with the letter that follows in the alphabet.  Then, it capitalizes all vowels.',
+	description: 'A function that takes a string, and replaces every letter in the string with the letter that follows in the alphabet.  <br>Then, it capitalizes all vowels.  <br>Numbers stay the same.',
 	placeholder: 'Type me anything',
 	primaryFunction:
 		function letterChanges(str) {
@@ -230,7 +239,7 @@ document.getElementById('buttons').addEventListener('click', function(e) {
 document.getElementById('submitButton').addEventListener('click', function(e) {
 	'use strict';
 	var boom = arrayOfObjects[i].primaryFunction(textField.value);
-
+	
 	if (textField.value !== '') { // If the user has input data, execute the function and show some stuff
 		printInput.innerHTML=textField.value;
 		answer.innerHTML=boom;
