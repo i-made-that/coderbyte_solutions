@@ -15,38 +15,47 @@ var	genericForm = document.getElementById('genericForm'),
 
 // Object literal template, use for adding new functions
 //
-// var XXX = {
+// {
 // 	title: '',
 // 	description: '',
-// 	placeholder: '',
+// 	placeholder: 'Type me anything',
 // 	primaryFunction:,
-// 	helperFunction:
-// };
+// 	helperFunction: undefined
+// },
 
 
 // Coderbyte Object Array
 var arrayOfObjects = [
 {
-	title: 'vowelCount',
-	description: 'This function counts the number of vowels in a sentence or word.',
-	placeholder: 'Enter some things here',
+	title: 'firstFactorial',
+	description: 'Takes a number, returns it\'s factorial',
+	placeholder: 'Type me anything',
 	primaryFunction:
-		function vowelCount(str) {
-			'use strict';
-			var matchArray = str.match(/[aeiou]/gi);
-			if (str === '') {
-				return '';
-			} else if (matchArray === null) {
-				return '0 vowels total';
-			} else return matchArray.length + ' vowels total in ' + '"' + regexpColor(str, /[aeiou]/gi) + '"' ;
-		},
+	function FirstFactorial (num) {
+		var result = num;
+		for (var i = num; i > 1; i--) {
+			result *= (i -1);
+		}
+		return result;
+	},
+	helperFunction: undefined
+},
+
+{
+	title: 'firstReverse',
+	description: 'This function reverses a string',
+	placeholder: 'Type me anything',
+	primaryFunction:
+	function firstReverse(str) {
+		return str.split("").reverse().join("");
+	},
 	helperFunction: undefined
 },
 
 {
 	title: 'letterChanges',
 	description: 'A function that takes a string, and replaces every letter in the string with the letter that follows in the alphabet.  Then, it capitalizes all vowels.',
-	placeholder: 'Enter some words',
+	placeholder: 'Type me anything',
 	primaryFunction:
 		function letterChanges(str) {
 		'use strict';
@@ -76,15 +85,18 @@ var arrayOfObjects = [
 },
 
 {
-	title: 'add2',
-	description: 'A function that adds the numeral 2 to anything',
-	placeholder: 'Text please!',
+	title: 'vowelCount',
+	description: 'This function counts the number of vowels in a sentence or word.',
+	placeholder: 'Type me anything',
 	primaryFunction:
-		function add2(str) {
+		function vowelCount(str) {
 			'use strict';
-			if (str !== '') {
-				return str + 2;
-			} else return '';
+			var matchArray = str.match(/[aeiou]/gi);
+			if (str === '') {
+				return '';
+			} else if (matchArray === null) {
+				return '0 vowels total';
+			} else return matchArray.length + ' vowels total in ' + '"' + regexpColor(str, /[aeiou]/gi) + '"' ;
 		},
 	helperFunction: undefined
 }
