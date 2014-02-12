@@ -1,3 +1,11 @@
+#buttons {
+	max-width: 800px;
+}
+
+#buttons button {
+	margin: 2px;
+}
+
 #container {
 	margin-left: 15px;
 }

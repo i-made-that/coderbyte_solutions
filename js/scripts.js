@@ -291,17 +291,17 @@ var arrayOfObjects = [
 	description: 'Swaps the upper/lower case of each letter, depending on their original case.<br>Numbers and symbols stay the same.',
 	placeholder: 'Type me anything',
 	primaryFunction:
-		function swapCase(str) {
-			'use strict';
-		  var newStr = '';
-		  for (var i = 0; i < str.length; i++)
-		    if (str.charAt(i) == str.charAt(i).toUpperCase()) {
-		      newStr = newStr + str.charAt(i).toLowerCase();
-		    } else if (str.charAt(i) == str.charAt(i).toLowerCase()) {
-		    	newStr = newStr + str.charAt(i).toUpperCase();
-		    }
-		    return newStr;
-		  },
+	function swapCase(str) {
+		'use strict';
+		var newStr = '';
+		for (var i = 0; i < str.length; i++)
+			if (str.charAt(i) == str.charAt(i).toUpperCase()) {
+				newStr = newStr + str.charAt(i).toLowerCase();
+			} else if (str.charAt(i) == str.charAt(i).toLowerCase()) {
+				newStr = newStr + str.charAt(i).toUpperCase();
+			}
+			return newStr;
+		},
 	helperFunction: undefined
 },
 
