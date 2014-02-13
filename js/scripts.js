@@ -55,7 +55,7 @@ var arrayOfObjects = [
 
 {
 	title: 'dashInsert',
-	description: 'Inserts dashes between each 2 odd numbers.<br>0 doesn\'t count as odd',
+	description: 'Inserts a dash between any two adjacent odd numbers in a string.<br>0 doesn\'t count as odd',
 	placeholder: 'Type me anything',
 	primaryFunction:
 		function dashInsert (num) {
@@ -133,8 +133,9 @@ var arrayOfObjects = [
 	primaryFunction:
 		function letterChanges(str) {
 		'use strict';
+		str.toLowerCase();
 		var newStr = '',
-			len = str.length;
+				len = str.length;
 		for (var i = 0; i < len; i++) {
 			if ((/z/i).test(str.charAt(i))) {
 				newStr += 'a';
@@ -246,6 +247,8 @@ var arrayOfObjects = [
 				return '<span class="red">I need a number, please!</span>';
 			} else if (parseInt(num) === 0) {
 				return num + '!' + ' is equal to 1';
+			} else if (num > 10000000) {
+				return '<span class="red">A number that big might kill your browser!</span>';
 			} else if (num < 0) {
 				return '<span class="red">I need a POSITIVE number, please!</span>';
 			} else if (num % 1 !== 0) {
@@ -275,7 +278,7 @@ var arrayOfObjects = [
 			'use strict';
 			var isIt = false;
 			for (var i = 0; i < str.length; i++) {
-				if (/[a-z]/.test(str.charAt(i))) {
+				if (/[a-zA-Z]/.test(str.charAt(i))) {
 					if (str.charAt(i + 1) === '+' && str.charAt(i - 1) === '+') {
 						isIt = true;
 					} else return '<span class="red">NOT</span>  acceptable!';

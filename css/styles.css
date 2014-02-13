@@ -3,7 +3,8 @@
 }
 
 #buttons button {
-	margin: 2px;
+	margin-right: 3px;
+	margin-bottom: 3px;
 }
 
 #container {
