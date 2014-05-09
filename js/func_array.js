@@ -2,6 +2,23 @@
 // Big Coderbyte Object Array ///
 ////////////////////////////////
 
+// {
+// 	title: ,
+// 	description: ,
+// 	placeholder: ,
+// 	primaryFunction: ,
+// 	helperFunction: undefined,
+// 	simpleCode:
+// },
+
+var util = {
+	toArgs: function(str) {
+		return str.split(',').map(function(val) { return eval(val) });
+	}
+}
+
+
+
 var arrayOfObjects = [
 {
 	title: 'abCheck',
@@ -33,6 +50,61 @@ var arrayOfObjects = [
 	function alphabetSoup(str) {
 		return str.split('').sort().join('');
 	}
+},
+
+
+{
+	title: 'arithGeo',
+	description: 'Determine whether a set of numbers constitue an arithmetic or geometric sequence.<br>Please enter integers separated by commas.',
+	placeholder: 'ex: 5, 10, 15, 20',
+	primaryFunction: 
+	function arithGeo(arr) { 
+		if (arr.match(/[^0-9^\s^,]/g)) {
+			return regexpColor('Integers and commas only')
+		}
+
+		else {
+			arr = util.toArgs(arr);	
+  
+		  var diff = arr[1] - arr[0],
+		      ratio = arr[1] / arr[0],
+		      arith = true,
+		      geo = true;
+		  
+		  for (var i = 1; i < arr.length - 1; i++) {
+		    if (arr[i + 1] - arr[i] !== diff) {
+		      arith = false;
+		    }
+		    if (arr[i + 1] / arr[i] !== ratio) {
+		      geo = false;
+		    }
+		  }
+		  
+		  if (arith) {return 'It\'s an arithmetic sequence!'}
+		  else if (geo) {return 'It\'s a geometric sequence!'}
+		  else return 'Not arithmetic or geometric';  
+		  }       
+	},
+	helperFunction: undefined,
+	simpleCode:
+	function arithGeo(arr) {
+		var diff = arr[1] - arr[0],
+      		ratio = arr[1] / arr[0],
+      		arith = true,
+      		geo = true;
+
+      for (var i = 1; i < arr.length - 1; i++) {
+      	if (arr[i + 1] - arr[i] !== diff) {
+      		arith = false;
+      	}
+      	if (arr[i + 1] / arr[i] !== ratio) {
+      		geo = false;
+      	}
+      }
+	  if (arith) {return 'Arithmetic'}
+	  else if (geo) {return 'Geometric'}
+	  else return -1;         
+}
 },
 
 
@@ -235,31 +307,22 @@ return this.helperFunction(newStr);
 },
 
 {
-	title: '*palindrome',
-	description: 'Determines whether or not a string is a Palindrome.<br>Ignores numbers and punctuation.<br>Spaces don\'t count.',
+	title: 'palindrome',
+	description: 'Determines whether or not a string is a Palindrome',
 	placeholder: 'Type me anything',
 	primaryFunction:
 	function palindrome(str) {
-    var newStr = '';
-	
-
-		var removeSpaces = function(str){
-			var noSpaceStr = '';
-			for (var i = 0; i < str.length; i++){
-				if (str.charAt(i) !== ' '){
-					noSpaceStr += str.charAt(i);
-				}
-			}
-			return noSpaceStr;
-		};
-		for (var i = removeSpaces(str).length; i >= 0; i--){
-			newStr = newStr + removeSpaces(str).charAt(i);
-		}
-		if (removeSpaces(str) === newStr){
-			return 'Success! Palindrome!';
-		} else return 'Sorry, not a palindrome...';
-	},
-	helperFunction: undefined
+		var newStr = str.toLowerCase().split(/[^a-z]/).join(''),
+  			compareStr = newStr.split('').reverse().join('');
+  	return newStr === compareStr ? 'It\'s a palindrome!' : 'No, not a palindrome.';     
+},
+	helperFunction: undefined,
+	simpleCode:
+	function palindrome(str) {
+		var newStr = str.toLowerCase().split(/[^a-z]/).join(''),
+				compareStr = newStr.split('').reverse().join('');
+		return newStr === compareStr;     
+}
 },
 
 {
