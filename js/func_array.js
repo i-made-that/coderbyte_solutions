@@ -54,6 +54,29 @@ var arrayOfObjects = [
 	helperFunction: undefined
 },
 
+
+{
+	title: 'exOh',
+	description: 'Determine whether there are an equal number of x\'s and o\'s in a string',
+	placeholder: 'Type me some x\'s and o\'s',
+	primaryFunction:
+	function ExOh(str) {
+		var ex = str.match(/x/g),
+		oh = str.match(/o/g);
+		if (ex === null || oh === null) { return 'false'; }
+		else return (str.match(/x/g).length === str.match(/o/g).length);         
+},
+	helperFunction: undefined,
+	simpleCode:
+	function ExOh(str) {
+		var ex = str.match(/x/g),
+		oh = str.match(/o/g);
+		if (ex === null || oh === null) { return false; }
+		else return (str.match(/x/g).length === str.match(/o/g).length);         
+}
+},
+
+
 {
 	title: 'firstFactorial',
 	description: 'Takes number, returns factorial',
@@ -397,7 +420,7 @@ return this.helperFunction(newStr);
 // 	description: ,
 // 	placeholder: ,
 // 	primaryFunction: ,
-// 	helperFunction: ,
+// 	helperFunction: undefined,
 // 	simpleCode:
 // },
 
