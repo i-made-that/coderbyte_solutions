@@ -23,6 +23,7 @@
 
 #functionCode {
 	display: none;
+	margin-bottom: 15px;
 	padding: 10px 15px 10px 15px;
 	width: intrinsic;
 	width: -moz-max-content;
