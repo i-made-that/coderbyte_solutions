@@ -347,14 +347,14 @@ return this.helperFunction(newStr);
 	},
 	helperFunction: undefined,
 	simpleCode:
-	function TimeConvert(num) {
+	function timeConvert(num) {
 		return Math.floor(num / 60) + ':' + num % 60; 
 }
 },
 
 
 {
-	title: '*vowelCount',
+	title: 'vowelCount',
 	description: 'This function counts the number of vowels in a sentence or word.',
 	placeholder: 'Type me anything',
 	primaryFunction:
@@ -366,6 +366,44 @@ return this.helperFunction(newStr);
 				return '0 vowels total';
 			} else return matchArray.length + ' vowels total in ' + '"' + regexpColor(str, /[aeiou]/gi) + '"' ;
 		},
-	helperFunction: undefined
+	helperFunction: undefined,
+	simpleCode:
+	function VowelCount(str) {
+		var vowels = str.match(/[aeiou]/gi);
+		return vowels ? vowels.length : 0;   
 }
+},
+
+{
+	title: 'wordCount',
+	description: 'Count the number of words in a sentence.',
+	placeholder: 'Type me anything',
+	primaryFunction:
+	function WordCount(str) {
+		return str.split(' ').length + ' words total';
+	},
+	helperFunction: undefined,
+	simpleCode:
+	function WordCount(str) {
+		return str.split(' ').length;
+}
+},
+
+
+
+
+// {
+// 	title: ,
+// 	description: ,
+// 	placeholder: ,
+// 	primaryFunction: ,
+// 	helperFunction: ,
+// 	simpleCode:
+// },
+
+
+
+
+
+
 ];
