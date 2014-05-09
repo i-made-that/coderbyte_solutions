@@ -54,6 +54,16 @@ var arrayOfObjects = [
 
 
 {
+	title: 'DO ARRAYADDITION!!!',
+	description: undefined,
+	placeholder: undefined,
+	primaryFunction: undefined,
+	helperFunction: undefined,
+	simpleCode: undefined
+},
+
+
+{
 	title: 'arithGeo',
 	description: 'Determine whether a set of numbers constitue an arithmetic or geometric sequence.<br>Please enter integers separated by commas.',
 	placeholder: 'ex: 5, 10, 15, 20',
@@ -109,7 +119,7 @@ var arrayOfObjects = [
 
 
 {
-	title: '*dashInsert',
+	title: 'dashInsert',
 	description: 'Inserts a dash between any two adjacent odd numbers in a string.<br>0 doesn\'t count as odd',
 	placeholder: 'Type me anything',
 	primaryFunction:
@@ -123,7 +133,18 @@ var arrayOfObjects = [
 			}
 			return newStr;
 		},
-	helperFunction: undefined
+	helperFunction: undefined,
+	simpleCode:
+		function dashInsert (num) {
+			var str = num.toString();
+			var newStr = '';
+			for (var i = 0; i < str.length; i++) {
+				if ((str.charAt(i) % 2 === 1) && (str.charAt(i+1) % 2 === 1)) {
+					newStr += str.charAt(i) + '-';
+				} else newStr += str.charAt(i);
+			}
+			return newStr;
+}
 },
 
 
@@ -259,6 +280,66 @@ return this.helperFunction(newStr);
 },
 
 {
+	title: 'letterCount',
+	description: 'Find the first word with the greatest number of repeated letters.',
+	placeholder: 'Type me anything',
+	primaryFunction: 
+		function letterCount(str) { 
+ 		  var wordArray = str.split(' '),
+		      biggest,
+		      biggestReggie,
+		      currentWord,
+		      count = 0,
+		      reggie,
+		      i,
+		      j;
+
+	  for (i = 0; i < wordArray.length; i++) {
+	  	currentWord = wordArray[i];
+	  	for (j = 0; j < currentWord.length; j++) {
+	  		reggie = new RegExp(currentWord.charAt(j), 'g');
+	  		if (currentWord.match(reggie).length > count) {
+	  			count = currentWord.match(reggie).length;
+	  			biggest = wordArray[i];
+	  			biggestReggie = reggie;
+	  		}
+	  	}
+	  }	
+	   
+	  // code goes here 
+	  if (count < 2) return 'There are no repeated letters.';
+	  else return '\'' + regexpColor(biggest, biggestReggie) + '\'' + ' has the most repeated letters.';
+	},
+	helperFunction: undefined,
+	simpleCode: 
+	function letterCount(str) { 
+ 		  var wordArray = str.split(' '),
+		      biggest,
+		      currentWord,
+		      count = 0,
+		      reggie,
+		      i,
+		      j;
+
+		  for (i = 0; i < wordArray.length; i++) {
+		  	currentWord = wordArray[i];
+		  	for (j = 0; j < currentWord.length; j++) {
+		  		reggie = new RegExp(currentWord.charAt(j), 'g');
+		  		if (currentWord.match(reggie).length > count) {
+		  			count = currentWord.match(reggie).length;
+		  			biggest = wordArray[i];
+		  		}
+		  	}
+		  }	
+		   
+		  // code goes here 
+		  if (count < 2) return -1;
+		  else return biggest;
+}
+},
+
+
+{
 	title: 'longestWord',
 	description: 'Returns the longest word in a sentence.<br>If there is more than one longest word with the same length, it returns the first.<br>Symbols and punctuation are <em>not</em> accounted for.',
 	placeholder: 'Type me anything',
@@ -280,30 +361,18 @@ return this.helperFunction(newStr);
 },
 
 {
-	title: '*numberAddition',
-	description: 'Adds all numbers found in a string (with or without letters & symbols).<br>Adjacent numbers matter (AKA 88sb3 = 91; 8b8b3 = 19)',
+	title: 'numberAddition',
+	description: 'Adds all numbers found in a string (with or without letters & symbols).<br>Adjacent numbers matter (\'88sb3\' = 91; \'8b8b3\' = 19)',
 	placeholder: 'Type me anything',
 	primaryFunction:
-		function numberAddition (str) {
-			var total = 0;
-			var num = 0;
-			for (var i = 0; i < str.length; i++) {
-				if (str.charAt(i) === ' ') {
-					total += parseInt(num);
-					num = 0;
-				}
-				else if (!isNaN(str.charAt(i))) {
-					num += str.charAt(i);
-				}
-				else {
-					total += parseInt(num);
-					num = 0;
-				}
-			}
-			total += parseInt(num);
-			return total;
+		function NumberAddition(str) { 
+  		return str.split(/[^\d]+/).reduce(function(a, b) {return +a + +b}) || 0; 
 		},
-	helperFunction: undefined
+	helperFunction: undefined,
+	simpleCode:
+		function NumberAddition(str) { 
+  		return str.split(/[^\d]+/).reduce(function(a, b) {return +a + +b}) || 0; 
+		},
 },
 
 {
@@ -416,6 +485,25 @@ return this.helperFunction(newStr);
 			return newStr;
 		},
 	helperFunction: undefined
+},
+
+
+{
+	title: 'thirdGreatest',
+	difficulty: 'medium'
+	description: 'Find the third longest word in a sentence.',
+	placeholder: 'Type me a sentence',
+	primaryFunction: 
+	function thirdGreatest(str) { 
+		var arr = str.split(' ');
+  	return '\'' + regexpColor(arr.sort(function(a, b) { return b.length - a.length })[2]) + '\'' + ' is the third longest word'; 
+	},
+	helperFunction: undefined,
+	simpleCode:
+	function thirdGreatest(str) { 
+		var arr = str.split(' ');
+  		return arr.sort(function(a, b) { return b.length - a.length })[2]; 
+}
 },
 
 
