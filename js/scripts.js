@@ -59,8 +59,8 @@ function buildButtons (array) {
 				
 		newButton.id=arrayOfObjects[i].title;
 		newButton.className='btn';
-		if (arrayOfObjects[i].difficulty === 'medium') {
-			alert('medium!');
+		if (arrayOfObjects[i].difficulty) {
+			newButton.className='btn btn-warning';
 		}
 		newButton.dataset.index=[i];
 		newButton.innerHTML=arrayOfObjects[i].title;

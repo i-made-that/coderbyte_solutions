@@ -490,7 +490,7 @@ return this.helperFunction(newStr);
 
 {
 	title: 'thirdGreatest',
-	difficulty: 'medium'
+	difficulty: 'medium',
 	description: 'Find the third longest word in a sentence.',
 	placeholder: 'Type me a sentence',
 	primaryFunction: 
