@@ -39,7 +39,7 @@ var arrayOfObjects = [
 
 {
 	title: 'alphabetSoup',
-	description: 'Alphabetizes a string, numbers first',
+	description: 'Alphabetizes a string, numbers first.',
 	placeholder: 'Type me anything',
 	primaryFunction:
 		function alphabetSoup(str) {
@@ -54,12 +54,60 @@ var arrayOfObjects = [
 
 
 {
-	title: 'DO ARRAYADDITION!!!',
-	description: undefined,
-	placeholder: undefined,
-	primaryFunction: undefined,
+	title: 'arrayAddition',
+	description: 'Determine whether any combination in a set of numbers can add up to equal the largest number in that set.<br>Please enter integers separated by commas.',
+	placeholder: 'ex: 3, 3, 4, 9, 1, 1, 1, 1',
+	primaryFunction: function arrayAddition(arr) {
+		if (arr.match(/[^0-9^\s^,]/g)) {
+			return regexpColor('Integers and commas only')
+		}
+
+		else { 
+			arr = util.toArgs(arr);	
+
+			var max = arr.sort(function(a, b) {return a - b}).pop(),
+					len = arr.length,
+					i,
+					j,
+					sum = 0;
+
+			for (i = 0; i < len; i += 1) {
+				sum += arr[i];
+				for (j = 0; j < len; j += 1) {
+					if (i !== j){
+						sum += arr[j]
+					};
+					if (sum === max){
+						return 'Yes, a subset can be summed to equal ' + max;
+					}
+				}
+				sum = 0;
+			}
+			return 'No, there is no combination that can be summed to equal ' + max;  
+		}     
+},
 	helperFunction: undefined,
-	simpleCode: undefined
+	simpleCode: function arrayAddition(arr) {
+		var max = arr.sort(function(a, b) {return a - b}).pop(),
+				len = arr.length,
+				i,
+				j,
+				sum = 0;
+
+		for (i = 0; i < len; i += 1) {
+			sum += arr[i];
+			for (j = 0; j < len; j += 1) {
+				if (i !== j){
+					sum += arr[j]
+				};
+				if (sum === max){
+					return true;
+				}
+			}
+			sum = 0;
+		}
+		return false;       
+}
 },
 
 
