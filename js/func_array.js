@@ -470,27 +470,35 @@ return this.helperFunction(newStr);
 },
 
 {
-	title: '*swapCase',
+	title: 'swapCase',
 	description: 'Swaps the upper/lower case of each letter, depending on their original case.<br>Numbers and symbols stay the same.',
 	placeholder: 'Type me anything',
 	primaryFunction:
 	function swapCase(str) {
-		var newStr = '';
-		for (var i = 0; i < str.length; i++)
-			if (str.charAt(i) == str.charAt(i).toUpperCase()) {
-				newStr = newStr + str.charAt(i).toLowerCase();
-			} else if (str.charAt(i) == str.charAt(i).toLowerCase()) {
-				newStr = newStr + str.charAt(i).toUpperCase();
+		str = str.split('');
+		return str.map(function(val) {
+			if (val.match(/[a-zA-Z]/)) {
+				return val.charCodeAt() >= 97 ? val.toUpperCase() : val.toLowerCase();
 			}
-			return newStr;
-		},
-	helperFunction: undefined
+			else return val;
+		}).join('');
+},
+	helperFunction: undefined,
+	simpleCode:
+	function swapCase(str) {
+		str = str.split('');
+		return str.map(function(val) {
+			if (val.match(/[a-zA-Z]/)) {
+				return val.charCodeAt() >= 97 ? val.toUpperCase() : val.toLowerCase();
+			}
+			else return val;
+		}).join('');
+},
 },
 
 
 {
 	title: 'thirdGreatest',
-	difficulty: 'medium',
 	description: 'Find the third longest word in a sentence.',
 	placeholder: 'Type me a sentence',
 	primaryFunction: 
